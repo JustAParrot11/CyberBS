@@ -31,7 +31,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 12px 24px;
+  padding: 12px 100px;
   margin: 0 10px;
   transition: color 0.3s ease, transform 0.3s ease;
   outline: none;
