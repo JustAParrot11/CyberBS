@@ -4,43 +4,43 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Create the navigation bar at the top with transparency */
+/* Create the navigation bar at the top with slightly transparent background */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+  background-color: rgba(0, 0, 128, 0.8); /* Slightly less transparent navy blue background */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
   z-index: 100;
+  backdrop-filter: blur(10px); /* Optional: adds a blur effect behind the navbar */
 }
 
-/* Style buttons inside the navbar */
+/* Style the text that acts as buttons in the navbar */
 .navbar button {
-  background-color: transparent;
+  background-color: transparent; /* No background color */
   color: white;
-  border: 2px solid white;
-  padding: 14px 28px; /* Larger padding for a more spacious look */
-  margin: 0 200px; /* Increased margin for more space between buttons */
-  cursor: pointer;
+  border: none; /* No border around the text */
   font-size: 16px;
-  border-radius: 25px; /* Rounded corners for a modern look */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  font-weight: bold; /* Make the text bold to emphasize it */
+  text-transform: uppercase; /* Make text uppercase for a professional look */
+  cursor: pointer;
+  padding: 0; /* No padding around the text */
+  margin: 0 200px; /* Increased margin for more space between buttons */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and zoom effect */
+  outline: none; /* Remove outline to avoid a focus box */
 }
 
-/* Hover effect with a smooth transition */
+/* Hover effect for text "buttons" */
 .navbar button:hover {
-  background-color: white;
-  color: black;
-  transform: scale(
-    1.05
-  ); /* Slight zoom effect on hover for a more interactive feel */
+  color: #00000; /* Change text color to navy blue on hover */
+  transform: scale(1.3); /* Slight zoom effect on hover for an interactive feel */
 }
 
-/* Style the transparent image */
+/* Style the image to remain fully opaque */
 .content {
   margin-top: 60px; /* Adjust to ensure buttons don't overlap image */
   text-align: center;
@@ -49,5 +49,5 @@ body {
 .transparent-image {
   max-width: 100%;
   height: auto;
-  opacity: 0.8; /* Slight transparency */
+  opacity: 1; /* Make the image fully opaque (no transparency) */
 }
