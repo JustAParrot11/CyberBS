@@ -75,6 +75,7 @@ body {
   width: 500px; /* Adjust size as needed */
   height: 250px; /* Adjust size as needed */
   display: flex;
+  flex-direction: column; /* Stack text vertically */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -82,12 +83,20 @@ body {
   z-index: 10; /* Ensure it is above the background video */
 }
 
-#typing-text {
+/* Consistent styling for both text elements */
+#typing-text, #bullshit-text {
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace; /* Optional: mimic typewriter font */
+  font-family: 'Courier New', Courier, monospace; /* Use the same font for both texts */
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide overflowing text during animation */
+  line-height: 1.2; /* Adjust line height if needed */
+  color: white; /* Ensure both texts are white */
+}
+
+/* Add space between the two texts */
+#typing-text {
+  margin-bottom: 10px; /* Space between "Welcome to CyberBS" and "No BullSh*t" */
 }
 
 /* Optional: Text or content overlay on the background */
