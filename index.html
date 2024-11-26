@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport for scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberBS</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,9 +19,12 @@
     <button onclick="location.href='#button5'">Button5</button>
   </div>
 
-  <!-- Content Section with Image -->
+  <!-- Background Video Section -->
   <div class="content">
-    <img src="background.MP4" alt="Transparent MP4" class="transparent-image">
+    <video autoplay muted loop class="background-video">
+      <source src="background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
 </body>
