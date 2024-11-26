@@ -40,7 +40,7 @@ body {
 
 /* Hover effect for buttons */
 .navbar button:hover {
-  color: #000; /* Change text color to black on hover */
+  color: #00000; /* Change text color to white on hover */
   transform: scale(1.5); /* Slight zoom effect on hover for interactivity */
 }
 
