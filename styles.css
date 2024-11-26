@@ -40,7 +40,7 @@ body {
 
 /* Hover effect for buttons */
 .navbar button:hover {
-  color: #00000; /* Change text color to white on hover */
+  color: #000; /* Change text color to black on hover */
   transform: scale(1.25); /* Slight zoom effect on hover for interactivity */
 }
 
@@ -62,6 +62,32 @@ body {
   height: 100%;
   object-fit: cover; /* Ensure the video covers the entire area */
   z-index: -1; /* Ensure video is behind other elements */
+}
+
+/* Black square with centered text */
+.black-square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  width: 300px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid white; /* Optional: add border for styling */
+  z-index: 10; /* Ensure it is above the background video */
+}
+
+#typing-text {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace; /* Optional: mimic typewriter font */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text during animation */
 }
 
 /* Optional: Text or content overlay on the background */
