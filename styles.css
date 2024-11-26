@@ -1,7 +1,7 @@
 /* Set up basic page styling */
 body {
   margin: 0;
-  font-family: Georgia, serif;
+  font-family: "Times New Roman", Times, serif;
   box-sizing: border-box; /* Ensure padding and borders don't affect layout */
   height: 100%; /* Ensure the body takes up full height */
   overflow: hidden; /* Prevent scrolling beyond the page */
@@ -67,7 +67,7 @@ body {
 /* Black square with centered text */
 .black-square {
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
@@ -78,7 +78,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 2px solid white; /* Optional: add border for styling */
+  border: 2px solid black; /* Optional: add border for styling */
   z-index: 10; /* Ensure it is above the background video */
 }
 
