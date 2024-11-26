@@ -41,16 +41,18 @@ body {
   transform: scale(1.1); /* Slight zoom effect on hover for an interactive feel */
 }
 
-/* Style the image to remain fully opaque */
+/* Style the image to remain fully opaque and scale to fit screen */
 .content {
   margin-top: 60px; /* Adjust to ensure buttons don't overlap image */
   text-align: center;
+  position: relative;
 }
 
-/* Transparent image to remain fully visible */
+/* Make the image responsive and fit the screen */
 .transparent-image {
-  max-width: 100%; /* Ensure image scales properly */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Ensure image spans the full width of the screen */
+  height: 100vh; /* Make the image fill the entire vertical height of the viewport */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire screen */
   opacity: 1; /* Ensure image is fully opaque */
 }
 
@@ -62,6 +64,10 @@ body {
     padding: 10px 20px; /* Adjust padding */
     margin: 0 15px; /* Adjust margin between buttons */
   }
+
+  .transparent-image {
+    height: 80vh; /* Adjust height for tablets */
+  }
 }
 
 @media (max-width: 768px) {
@@ -70,6 +76,10 @@ body {
     font-size: 12px; /* Reduce font size */
     padding: 8px 16px; /* Smaller padding */
     margin: 0 10px; /* Reduce margin */
+  }
+
+  .transparent-image {
+    height: 70vh; /* Adjust height for smaller screens */
   }
 
   .content {
@@ -83,6 +93,10 @@ body {
     font-size: 10px; /* Even smaller font size for mobile */
     padding: 6px 12px; /* Even smaller padding */
     margin: 0 5px; /* Smaller margins */
+  }
+
+  .transparent-image {
+    height: 60vh; /* Adjust height for mobile screens */
   }
 
   .content {
