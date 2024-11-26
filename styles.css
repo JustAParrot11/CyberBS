@@ -11,13 +11,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 128, 0.48); /* Slightly transparent navy blue background */
+  background-color: rgba(1, 20, 97, 0.9); /* Slightly transparent navy blue background */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
   z-index: 100;
-  backdrop-filter: blur(10px); /* Optional: adds a blur effect behind the navbar */
+ /* backdrop-filter: blur(10px);*/  /* Optional: adds a blur effect behind the navbar */
 }
 
 /* Ensure buttons are not affected by navbar background */
@@ -30,7 +30,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   padding: 12px 24px;
-  margin: 0 20px;
+  margin: 0 200px;
   transition: color 0.3s ease, transform 0.3s ease;
   outline: none;
   z-index: 10; /* Ensure buttons appear above the navbar background */
@@ -38,8 +38,8 @@ body {
 
 /* Hover effect for buttons */
 .navbar button:hover {
-  color: #003366; /* Change text color to navy blue on hover */
-  transform: scale(1.1); /* Slight zoom effect on hover for interactivity */
+  color: #00000; /* Change text color to white on hover */
+  transform: scale(1.5); /* Slight zoom effect on hover for interactivity */
 }
 
 /* Style the image to remain fully opaque and scale to fit screen */
