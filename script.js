@@ -1,5 +1,4 @@
 const text = "Welcome to CyberBS";
-const text = "... No BullSh*t";
 let index = 0;
 
 function typeText() {
