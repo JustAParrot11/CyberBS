@@ -13,7 +13,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(1, 20, 97, 0.9); /* Slightly transparent navy blue background */
+  background-color: rgba(1, 20, 97, 0.8); /* Slightly transparent navy blue background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   padding: 12px 24px;
-  margin: 0 200px;
+  margin: 0 100px;
   transition: color 0.3s ease, transform 0.3s ease;
   outline: none;
   z-index: 10; /* Ensure buttons appear above the navbar background */
@@ -40,7 +40,7 @@ body {
 
 /* Hover effect for buttons */
 .navbar button:hover {
-  color: #00000; /* Change text color to black on hover */
+  color: #00000; /* Change text color to white on hover */
   transform: scale(1.5); /* Slight zoom effect on hover for interactivity */
 }
 
