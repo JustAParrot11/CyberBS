@@ -116,6 +116,23 @@ body {
   padding: 20px;
 }
 
+/* Styling for the main content in the Information page */
+.main-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  z-index: 20;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /* Media Queries for responsiveness */
 @media (max-width: 1024px) {
   .navbar button {
