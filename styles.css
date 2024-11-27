@@ -72,8 +72,8 @@ body {
   transform: translate(-50%, -50%);
   background-color: black;
   color: white;
-  width: 700px; /* Adjust size as needed */
-  height: 450px; /* Adjust size as needed */
+  width: 900px; /* Adjust size as needed */
+  height: 650px; /* Adjust size as needed */
   display: flex;
   flex-direction: column; /* Stack text vertically */
   justify-content: center;
