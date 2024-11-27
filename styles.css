@@ -27,7 +27,7 @@ body {
   background-color: transparent; /* Make sure the button's background is fully transparent */
   color: white; /* Keep the button text solid */
   border: none; /* No border around the text */
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
@@ -72,7 +72,7 @@ body {
   transform: translate(-50%, -50%);
   background-color: black;
   color: white;
-  width: 800px; /* Adjust size as needed */
+  width: 700px; /* Adjust size as needed */
   height: 450px; /* Adjust size as needed */
   display: flex;
   flex-direction: column; /* Stack text vertically */
