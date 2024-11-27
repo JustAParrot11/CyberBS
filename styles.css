@@ -81,6 +81,131 @@ body {
   text-align: center;
   border: 2px solid black; /* Optional: add border for styling */
   z-index: 10; /* Ensure it is above the background video */
+  overflow: hidden; /* Hide the text overflow during animation */
+  transition: transform 1s ease-in-out, width 1s ease-in-out; /* Smooth transition for split animation */
+}
+
+/* Split effect: hide the center and animate the left and right halves */
+.black-square.split {
+  width: 100%; /* Maintain full width during animation */
+  transition: width 1s ease-in-out; /* Animate width change */
+}
+
+/* Create the effect of splitting the box into two */
+.black-square.split .left-half,
+.black-square.split .right-half {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 1s ease-in-out, opacity 1s ease;
+}
+
+/* Left half moves out to the left */
+.black-square.split .left-half {
+  left: 0;
+  transform: translateX(-100%); /* Move the left side off-screen */
+  opacity: 0; /* Fade out the left side */
+}
+
+/* Right half moves out to the right */
+.black-square.split .right-half {
+  right: 0;
+  transform: translateX(100%); /* Move the right side off-screen */
+  opacity: 0; /* Fade out the right side */
+}
+
+/* Fade out text as the split happens */
+#typing-text, #bullshit-text {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.2;
+  color: white;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* When split happens, fade out text */
+.split #typing-text, .split #bullshit-text {
+  opacity: 0;
+}
+
+/* Split effect: hide the center and animate the left and right halves */
+.black-square.split {
+  width: 100%; /* Keep width to maintain the center */
+  overflow: hidden;
+}
+
+/* Create the effect of splitting the box into two */
+.black-square.split .left-half,
+.black-square.split .right-half {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 1s ease-in-out;
+}
+
+.black-square.split .left-half {
+  left: 0; /* Position the left half */
+  transform: translateX(-100%); /* Move the left side off-screen */
+}
+
+.black-square.split .right-half {
+  right: 0; /* Position the right half */
+  transform: translateX(100%); /* Move the right side off-screen */
+}
+
+/* Hide the text inside the box after the split */
+#typing-text, #bullshit-text {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.2;
+  color: white;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* When split happens, fade out text */
+.split #typing-text, .split #bullshit-text {
+  opacity: 0;
+}
+
+/* Define the split effect */
+.black-square.split {
+  width: 0; /* Collapse the box */
+}
+
+.black-square.split-left {
+  transform: translateX(-100%); /* Move to the left */
+}
+
+.black-square.split-right {
+  transform: translateX(100%); /* Move to the right */
+}
+
+/* Hide the text after split */
+#typing-text, #bullshit-text {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace; /* Use the same font for both texts */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text during animation */
+  line-height: 1.2; /* Adjust line height if needed */
+  color: white; /* Ensure both texts are white */
+  opacity: 1; /* Text is visible by default */
+  transition: opacity 1s ease; /* Fade out text when splitting */
+}
+
+/* When the split occurs, fade out the text */
+.split #typing-text, .split #bullshit-text {
+  opacity: 0; /* Fade out text when split animation is triggered */
 }
 
 /* Consistent styling for both text elements */
