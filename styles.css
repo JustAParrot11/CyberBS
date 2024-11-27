@@ -117,7 +117,7 @@ body {
 
 /* Fade out text as the split happens */
 #typing-text, #bullshit-text {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   white-space: nowrap;
