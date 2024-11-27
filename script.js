@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Typing effect function
   function typeText(element, text, callback) {
     let index = 0;
-    const typingSpeed = 100; // Speed of typing (ms per character)
+    const typingSpeed = 75; // Speed of typing (ms per character)
 
     const typingInterval = setInterval(() => {
       element.textContent += text.charAt(index);
