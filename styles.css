@@ -289,16 +289,34 @@ h1 {
   bottom: -700px; /* Start completely off-screen */
   left: 50%;
   transform: translateX(-50%);
-  width: 1500px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
   background-color: black;
   z-index: 10;
   opacity: 0; /* Initially hidden */
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
   transition: bottom 1.5s ease-in-out, opacity 1.5s ease-in-out; /* Smooth sliding and fade-in animation */
+}
+
+/* Text inside the box */
+.sliding-text {
+  font-size: 40px;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out; /* Smooth fade-in for text */
 }
 
 /* Make the box visible and slide up */
 .sliding-box.visible {
-  bottom: 0%; /* Centered vertically */
+  bottom: 50%; /* Centered vertically */
   opacity: 1; /* Fully visible */
+}
+
+/* Make the text visible after the box slides up */
+.sliding-box.visible .sliding-text {
+  opacity: 1; /* Text fades in */
 }
