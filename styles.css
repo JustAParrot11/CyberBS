@@ -289,8 +289,8 @@ h1 {
   bottom: -700px; /* Start completely off-screen */
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
-  height: 800px;
+  width: 1100px;
+  height: 600px;
   background-color: black;
   z-index: 10;
   opacity: 0; /* Initially hidden */
@@ -312,7 +312,7 @@ h1 {
 
 /* Make the box visible and slide up */
 .sliding-box.visible {
-  bottom: 10%; /* Centered vertically */
+  bottom: 0%; /* Centered vertically */
   opacity: 1; /* Fully visible */
 }
 
