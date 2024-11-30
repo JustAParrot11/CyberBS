@@ -26,12 +26,26 @@ Main page created
 Black box and text created
 Links to info created (info left with test text to finish)
 CSS and mp4/webm backdrop finished and working
+Why on earth do I have an about page if I have a information tab - silly addition - remove this please
+Maybe change about tab to contact and just say cant contact me sorry :(
 - - - - - - 
 To Do:
 - - - - - - 
 NEED TO ADD A SECOND LARGER BLACK BOX SLIDE FROM BOTTOM OF SCREEN AFER MAIN PAGE FIRST BOX SPLIT OFF
 Think of cool things to add to main page
 Add a similiar style to the information tab
-Add content to info tab
-Why on earth do I have an about page if I have a information tab - silly addition - remove this please
-Maybe change about tab to contact and just say cant contact me sorry :(
+
+
+
+- - - - - - - 
+30/11/2024
+- - - - - - -
+I forgot that I even made notes and did nothing I previously said.
+Actually that was a lie I did the following:
+Added 2nd black box and made it slide, cool thing on main page was just a welcome (not as cool :(   )
+Added content to info tab and copied over mainpage format for consistency
+- - - - - - - -
+To Do:
+- - - - - - - 
+Fix the drop downs for Virus scan to show file scan and url scan
+Match background transparrency, blur and color
