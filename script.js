@@ -53,3 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000); // 2000ms = 2 seconds delay after the first text
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slidingBox = document.querySelector('.sliding-box');
+  
+  // Wait 7 seconds before triggering the animation
+  setTimeout(() => {
+    slidingBox.classList.add('visible'); // Add the class to trigger the animation
+  }, 8000); // 8000ms = 8 seconds
+});
