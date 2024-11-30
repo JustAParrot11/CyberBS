@@ -71,7 +71,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   backdrop-filter: blur(10px); /*Blur black box*/
-  background-color: rgba(0, 0, 0, 0.85); /*Make box black and      transparent*/
+  background-color: rgba(0, 0, 0, 0.25); /*Make box black and      transparent*/
   color: white;
   width: 700px; /* Adjust size as needed */
   height: 450px; /* Adjust size as needed */
