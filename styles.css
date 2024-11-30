@@ -289,8 +289,8 @@ h1 {
   bottom: -700px; /* Start completely off-screen */
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 600px;
+  width: 1000px;
+  height: 800px;
   background-color: black;
   z-index: 10;
   opacity: 0; /* Initially hidden */
@@ -319,4 +319,16 @@ h1 {
 /* Make the text visible after the box slides up */
 .sliding-box.visible .sliding-text {
   opacity: 1; /* Text fades in */
+}
+
+/*Sliding Box Text*/
+.sliding-box.visible .sliding-text {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid black; /* Adjust the caret color */
+  white-space: pre-wrap; /* Preserve whitespace for paragraphs */
+  animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+  font-size: 20px; /* Adjust the font size as needed */
+  font-family: 'Courier New', Courier, monospace; /* Change the font family as needed */
+  font-weight: bold; /* Optional: make the text bold */
 }
