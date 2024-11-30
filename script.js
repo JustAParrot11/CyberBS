@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 1000); // 1000ms = duration of the split animation
         }, 2000); // Wait another 2 seconds before splitting
       });
-    }, 2000); // 2000ms = 2 seconds delay after the first text
+    }, 1500); // 1500ms = 1.5 seconds delay after the first text
   });
 });
 
