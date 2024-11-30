@@ -56,9 +56,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const slidingBox = document.querySelector('.sliding-box');
-  
+  const slidingText = document.querySelector('.sliding-text');
+  const text = `Welcome to CyberBS!
+
+Thank you for visiting our platform, dedicated to providing you with essential insights and tools to protect your digital world. In today's fast-paced online environment, understanding the latest in cybersecurity is more important than ever, and this website make sure you're equipped with the resources to stay secure.
+
+On our website, you'll find a wealth of information on key cybersecurity concepts, with clear and detailed explanations designed for users of all levels. Whether you're new to cybersecurity or an experienced professional, our easy-to-navigate guides will help you better understand the threats we face and the best practices for defending against them.
+
+In addition to the knowledge base, we're excited to offer a free virus and URL analysis tool. This powerful tool allows you to check suspicious links and files, giving you an extra layer of security before you click or download.
+
+Thank you for visiting us, and we hope you find the information and tools here helpful in your journey toward safer online practices. Stay secure, stay informed!`;
+  let index = 0;
+
+  // Typing effect for the sliding box
+  function typeSlidingText() {
+    if (index < text.length) {
+      slidingText.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeSlidingText, 0.01); // Adjust typing speed here
+    }
+  }
+
   // Wait 7 seconds before triggering the animation
   setTimeout(() => {
     slidingBox.classList.add('visible'); // Add the class to trigger the animation
+    typeSlidingText(); // Start typing the text
   }, 8000); // 8000ms = 8 seconds
 });
