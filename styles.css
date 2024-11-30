@@ -282,3 +282,23 @@ h1 {
     margin: 0 5px;
   }
 }
+
+/* Sliding box styling */
+.sliding-box {
+  position: fixed;
+  bottom: -700px; /* Start completely off-screen */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1500px;
+  height: 800px;
+  background-color: black;
+  z-index: 10;
+  opacity: 0; /* Initially hidden */
+  transition: bottom 1.5s ease-in-out, opacity 1.5s ease-in-out; /* Smooth sliding and fade-in animation */
+}
+
+/* Make the box visible and slide up */
+.sliding-box.visible {
+  bottom: 0%; /* Centered vertically */
+  opacity: 1; /* Fully visible */
+}
