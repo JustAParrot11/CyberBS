@@ -312,7 +312,7 @@ h1 {
 
 /* Make the box visible and slide up */
 .sliding-box.visible {
-  bottom: 0%; /* Centered vertically */
+  bottom: 10%; /* Centered vertically */
   opacity: 1; /* Fully visible */
 }
 
