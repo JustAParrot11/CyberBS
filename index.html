@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -172,52 +171,6 @@
             background: rgba(100, 255, 218, 0.05);
         }
 
-        /* Server Status Styles */
-        .status-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(10, 25, 47, 0.9);
-            padding: 12px 20px;
-            border-radius: 30px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            z-index: 100;
-        }
-
-        .status-label {
-            color: var(--stellar-gray);
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        .status-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.9); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(0.9); opacity: 0.8; }
-        }
-
-        .status-dot.online {
-            background: #64ffda;
-            box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
-            animation: pulse 1.5s infinite;
-        }
-
-        .status-dot.offline {
-            background: #ff4646;
-            box-shadow: 0 0 15px rgba(255, 70, 70, 0.3);
-            animation: pulse 1.5s infinite;
-        }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -266,12 +219,6 @@
             <a href="pages/File-Virus-Scan.html" class="cta-button">Scan Files Now</a>
         </div>
     </section>
-
-    <!-- Server Status Indicator -->
-    <div class="status-container">
-        <span class="status-label">File Server Status:</span>
-        <div class="status-dot" id="serverStatusDot"></div>
-    </div>
 
     <script>
         // Network Canvas Animation
@@ -350,36 +297,8 @@
             canvas.height = window.innerHeight;
         });
 
-        // Server Status Checker
-async function checkConnectivity() {
-    const statusDot = document.getElementById('serverStatusDot');
-    const timeout = 3000;
-
-    try {
-        // Use a proper URL instead of raw IP
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), timeout);
-
-        // Test against a known-good endpoint
-        await fetch('N/A SERVER', { //CHANGE THIS TO FTP SERVER ONCE SERVER SETUP - WILL LIKELY NEED A BACKEND PROXY SETUP DUE TO CORS RESTRICTIONS :(
-            mode: 'no-cors',
-            signal: controller.signal,
-            cache: 'no-cache'
-        });
-        
-        clearTimeout(timeoutId);
-        statusDot.classList.remove('offline');
-        statusDot.classList.add('online');
-    } catch (error) {
-        statusDot.classList.remove('online');
-        statusDot.classList.add('offline');
-    }
-}
-
-        // Initialize animations and checks
+        // Initialize animation
         animate();
-        checkConnectivity();
-        setInterval(checkConnectivity, 10000);
     </script>
 </body>
 </html>
