@@ -34,7 +34,7 @@
             width: 100vw;
             height: 100vh;
             z-index: -1;
-            pointer-events: none; /* Disable canvas interactions */
+            pointer-events: none;
         }
 
         nav {
@@ -45,7 +45,7 @@
             background: rgba(10, 25, 47, 0.97);
             backdrop-filter: blur(12px);
             position: relative;
-            z-index: 2; /* Create stacking context */
+            z-index: 2;
         }
 
         .logo {
@@ -67,7 +67,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Hover bridge pseudo-element */
         .nav-item:hover::after {
             content: '';
             position: absolute;
@@ -83,7 +82,7 @@
 
         .dropdown {
             position: absolute;
-            top: 100%; /* Remove gap */
+            top: 100%;
             left: 0;
             background: rgba(10, 25, 47, 0.98);
             min-width: 240px;
@@ -96,7 +95,7 @@
             transform: translateY(-10px);
             transition: all 0.3s ease;
             margin-top: 0.5rem;
-            z-index: 1000; /* Ensure dropdown stays on top */
+            z-index: 1000;
         }
 
         .nav-item:hover .dropdown,
@@ -162,6 +161,52 @@
             background: rgba(100, 255, 218, 0.05);
         }
 
+        /* Server Status Styles */
+        .status-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(10, 25, 47, 0.9);
+            padding: 12px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            z-index: 100;
+        }
+
+        .status-label {
+            color: var(--stellar-gray);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.8; }
+        }
+
+        .status-dot.online {
+            background: #64ffda;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-dot.offline {
+            background: #ff4646;
+            box-shadow: 0 0 15px rgba(255, 70, 70, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -191,7 +236,7 @@
                     <div class="dropdown-item">TAB 6</div>
                 </div>
             </div>
-          <div class="nav-item">
+            <div class="nav-item">
                 File Check
                 <div class="dropdown">
                     <div class="dropdown-item">Virus Check</div>
@@ -211,7 +256,14 @@
         </div>
     </section>
 
+    <!-- Server Status Indicator -->
+    <div class="status-container">
+        <span class="status-label">File Server Status:</span>
+        <div class="status-dot" id="serverStatusDot"></div>
+    </div>
+
     <script>
+        // Network Canvas Animation
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -287,7 +339,35 @@
             canvas.height = window.innerHeight;
         });
 
+        // Server Status Checker
+        async function checkConnectivity() {
+            const statusDot = document.getElementById('serverStatusDot');
+            const testIP = '8.8.8.8';
+            const testPort = 53;
+            const timeout = 3000;
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+                await fetch(`http://${testIP}:${testPort}`, {
+                    mode: 'no-cors',
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                statusDot.classList.remove('offline');
+                statusDot.classList.add('online');
+            } catch (error) {
+                statusDot.classList.remove('online');
+                statusDot.classList.add('offline');
+            }
+        }
+
+        // Initialize animations and checks
         animate();
+        checkConnectivity();
+        setInterval(checkConnectivity, 10000);
     </script>
 </body>
 </html>
