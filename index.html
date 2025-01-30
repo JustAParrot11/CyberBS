@@ -340,29 +340,30 @@
         });
 
         // Server Status Checker
-        async function checkConnectivity() {
-            const statusDot = document.getElementById('serverStatusDot');
-            const testIP = '8.8.8.8';
-            const testPort = 53;
-            const timeout = 3000;
+async function checkConnectivity() {
+    const statusDot = document.getElementById('serverStatusDot');
+    const timeout = 3000;
 
-            try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), timeout);
+    try {
+        // Use a proper URL instead of raw IP
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeout);
 
-                await fetch(`http://${testIP}:${testPort}`, {
-                    mode: 'no-cors',
-                    signal: controller.signal
-                });
-                
-                clearTimeout(timeoutId);
-                statusDot.classList.remove('offline');
-                statusDot.classList.add('online');
-            } catch (error) {
-                statusDot.classList.remove('online');
-                statusDot.classList.add('offline');
-            }
-        }
+        // Test against a known-good endpoint
+        await fetch('https://www.google.com/favicon.ico', {
+            mode: 'no-cors',
+            signal: controller.signal,
+            cache: 'no-cache'
+        });
+        
+        clearTimeout(timeoutId);
+        statusDot.classList.remove('offline');
+        statusDot.classList.add('online');
+    } catch (error) {
+        statusDot.classList.remove('online');
+        statusDot.classList.add('offline');
+    }
+}
 
         // Initialize animations and checks
         animate();
