@@ -361,7 +361,7 @@ async function checkConnectivity() {
         const timeoutId = setTimeout(() => controller.abort(), timeout);
 
         // Test against a known-good endpoint
-        await fetch('https://www.google.com/favicon.ico', { //CHANGE THIS TO FTP SERVER ONCE SERVER SETUP - WILL LIKELY NEED A BACKEND PROXY SETUP DUE TO CORS RESTRICTIONS :(
+        await fetch('N/A SERVER', { //CHANGE THIS TO FTP SERVER ONCE SERVER SETUP - WILL LIKELY NEED A BACKEND PROXY SETUP DUE TO CORS RESTRICTIONS :(
             mode: 'no-cors',
             signal: controller.signal,
             cache: 'no-cache'
