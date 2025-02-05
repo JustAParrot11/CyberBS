@@ -6,9 +6,9 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     
     <meta charset="UTF-8">
-    <meta name="description" content="CyberBS | Cybersecurity. Discover tools, scans, and resources - Your go-to library for all things cybersecurity.">
+    <meta name="description" content="CyberBS | Cybersecurity Redefined. Discover tools, scans, and resources - Your go-to library for all things cybersecurity.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberBS | Cybersecurity </title>
+    <title>CyberBS | Cybersecurity Redefined</title>
 
     <link rel="stylesheet" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -59,9 +59,39 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 2rem; /* Increased size */
             font-weight: 600;
             color: var(--quantum-teal);
+            position: relative;
+            animation: glow 2s infinite alternate;
+            text-decoration: none; /* Removed underline */
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px rgba(100, 255, 218, 0.5), 0 0 10px rgba(100, 255, 218, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(100, 255, 218, 0.8), 0 0 30px rgba(100, 255, 218, 0.8);
+            }
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--quantum-teal);
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .nav-group {
@@ -182,7 +212,7 @@
     <canvas class="network-canvas" id="networkCanvas"></canvas>
 
     <nav>
-        <div class="logo">CyberBS</div>
+        <a href="index.html" class="logo">CyberBS</a> <!-- Logo is now a link -->
         <div class="nav-group">
             <div class="nav-item">
                 Drop Down 1
