@@ -59,12 +59,12 @@
         }
 
         .logo {
-            font-size: 2rem; /* Increased size */
+            font-size: 2rem;
             font-weight: 600;
             color: var(--quantum-teal);
             position: relative;
             animation: glow 2s infinite alternate;
-            text-decoration: none; /* Removed underline */
+            text-decoration: none;
         }
 
         @keyframes glow {
@@ -120,6 +120,36 @@
             color: var(--quantum-teal);
         }
 
+        /* New animation for dropdown items */
+        .nav-item .dropdown-item {
+            position: relative;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--stellar-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-item .dropdown-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--quantum-teal);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item .dropdown-item:hover::before {
+            width: 100%;
+        }
+
+        .nav-item .dropdown-item:hover {
+            color: var(--quantum-teal);
+            background: rgba(100, 255, 218, 0.05);
+        }
+
         .dropdown {
             position: absolute;
             top: 100%;
@@ -143,12 +173,6 @@
             display: block;
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .dropdown-item {
-            padding: 1rem 1.5rem;
-            color: var(--stellar-gray);
-            transition: all 0.2s ease;
         }
 
         .dropdown-item:hover {
