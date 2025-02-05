@@ -261,12 +261,12 @@
         .carousel-item {
             min-width: 100%;
             box-sizing: border-box;
-            text-align: center;
+            text-align: left; /* Align text to the left */
             padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Align items to the start (left) */
             background: var(--deep-space); /* Opaque background for the image area */
             border-radius: 8px; /* Rounded corners for the image area */
         }
@@ -279,9 +279,9 @@
         }
 
         .carousel-item h3 {
-            margin-top: 2rem;
+            margin-top: 3rem;
             color: var(--quantum-teal);
-            font-size: 1.5rem; /* Slightly larger font */
+            font-size: 2rem; /* Increased font size */
         }
 
         .carousel-item p {
@@ -299,7 +299,7 @@
             background: rgba(100, 255, 218, 0.1);
             border: none;
             color: var(--quantum-teal);
-            font-size: 1.5rem; /* Reduced font size */
+            font-size: 2rem; /* Reduced font size */
             cursor: pointer;
             padding: 0.5rem; /* Reduced padding */
             border-radius: 50%;
