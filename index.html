@@ -120,7 +120,6 @@
             color: var(--quantum-teal);
         }
 
-        /* New animation for dropdown items */
         .nav-item .dropdown-item {
             position: relative;
             display: block;
@@ -230,13 +229,108 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* Carousel Styles */
+        .carousel-section {
+            position: fixed;
+            top: 200px; /* Adjusted for better vertical positioning */
+            left: 50%; /* Center horizontally */
+            transform: translateX(5%); /* Center the carousel */
+            width: 800px; /* Increased width to accommodate arrows */
+            height: 400px; /* Increased height */
+            background: var(--deep-space); /* Removed transparency */
+            z-index: 1;
+            padding: 2rem; /* Increased padding */
+            box-shadow: -10px 0 30px rgba(2, 12, 27, 0.5);
+            border-radius: 12px; /* Slightly more rounded corners */
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--deep-space); /* Opaque background for the image area */
+            border-radius: 8px; /* Rounded corners for the image area */
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 300px; /* Increased height for images */
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .carousel-item h3 {
+            margin-top: 2rem;
+            color: var(--quantum-teal);
+            font-size: 1.5rem; /* Slightly larger font */
+        }
+
+        .carousel-item p {
+            margin-top: 1rem;
+            color: var(--stellar-gray);
+            font-size: 1rem; /* Slightly larger font */
+            max-width: 600px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(100, 255, 218, 0.1);
+            border: none;
+            color: var(--quantum-teal);
+            font-size: 1.5rem; /* Reduced font size */
+            cursor: pointer;
+            padding: 0.5rem; /* Reduced padding */
+            border-radius: 50%;
+            transition: background 0.3s ease;
+            z-index: 1000; /* Ensure arrows are above the carousel */
+            width: 40px; /* Added fixed width */
+            height: 40px; /* Added fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(100, 255, 218, 0.2);
+        }
+
+        .carousel-control-prev {
+            left: -50px; /* Adjusted position */
+        }
+
+        .carousel-control-next {
+            right: -50px; /* Adjusted position */
+        }
     </style>
 </head>
 <body>
     <canvas class="network-canvas" id="networkCanvas"></canvas>
 
     <nav>
-        <a href="index.html" class="logo">CyberBS</a> <!-- Logo is now a link -->
+        <a href="index.html" class="logo">CyberBS</a>
         <div class="nav-group">
             <div class="nav-item">
                 Drop Down 1
@@ -272,6 +366,31 @@
             <p>Discover tools, scans, and resources - Your go-to library for all things cybersecurity.</p>
             <a href="pages/File-Virus-Scan.html" class="cta-button">Scan Files Now</a>
         </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x300" alt="Slide 1">
+                    <h3>Heading 1</h3>
+                    <p>Short description for slide 1.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x300" alt="Slide 2">
+                    <h3>Heading 2</h3>
+                    <p>Short description for slide 2.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x300" alt="Slide 3">
+                    <h3>Heading 3</h3>
+                    <p>Short description for slide 3.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
     </section>
 
     <script>
@@ -353,6 +472,30 @@
 
         // Initialize animation
         animate();
+
+        // Carousel Functionality
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const slides = document.querySelectorAll('.carousel-item');
+            if (index >= slides.length) currentIndex = 0;
+            if (index < 0) currentIndex = slides.length - 1;
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            showSlide(currentIndex);
+        }
+
+        // Optional: Auto-play the carousel
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
