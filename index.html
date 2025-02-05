@@ -475,6 +475,16 @@
 
         // Carousel Functionality
         let currentIndex = 0;
+        let autoSlideInterval;
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
 
         function showSlide(index) {
             const carouselInner = document.querySelector('.carousel-inner');
@@ -487,15 +497,17 @@
         function nextSlide() {
             currentIndex++;
             showSlide(currentIndex);
+            resetAutoSlide();
         }
 
         function prevSlide() {
             currentIndex--;
             showSlide(currentIndex);
+            resetAutoSlide();
         }
 
-        // Optional: Auto-play the carousel
-        setInterval(nextSlide, 5000);
+        // Start the auto-slide initially
+        startAutoSlide();
     </script>
 </body>
 </html>
