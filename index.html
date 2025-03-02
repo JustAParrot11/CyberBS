@@ -254,25 +254,20 @@
             background: rgba(100, 255, 218, 0.05);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-
         /* Carousel Styles */
         .carousel-section {
-            position: fixed;
-            top: 250px; /* Adjusted for better vertical positioning */
-            left: 50%; /* Center horizontally */
-            transform: translateX(5%); /* Center the carousel */
-            width: 800px; /* Increased width to accommodate arrows */
-            height: 400px; /* Increased height */
-            background: var(--deep-space); /* Removed transparency */
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            max-width: 800px;
+            aspect-ratio: 2 / 1;
+            background: var(--deep-space);
             z-index: 1;
-            padding: 2rem; /* Increased padding */
+            padding: 2rem;
             box-shadow: -10px 0 30px rgba(2, 12, 27, 0.5);
-            border-radius: 12px; /* Slightly more rounded corners */
+            border-radius: 12px;
         }
 
         .carousel {
@@ -291,19 +286,19 @@
         .carousel-item {
             min-width: 100%;
             box-sizing: border-box;
-            text-align: left; /* Align text to the left */
+            text-align: left;
             padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* Align items to the start (left) */
-            background: var(--deep-space); /* Opaque background for the image area */
-            border-radius: 8px; /* Rounded corners for the image area */
+            align-items: flex-start;
+            background: var(--deep-space);
+            border-radius: 8px;
         }
 
         .carousel-item img {
             width: 100%;
-            height: 200px; /* Increased height for images */
+            height: 200px;
             border-radius: 8px;
             object-fit: cover;
         }
@@ -311,13 +306,13 @@
         .carousel-item h3 {
             margin-top: 3rem;
             color: var(--quantum-teal);
-            font-size: 2rem; /* Increased font size */
+            font-size: 2rem;
         }
 
         .carousel-item p {
             margin-top: 1rem;
             color: var(--stellar-gray);
-            font-size: 1rem; /* Slightly larger font */
+            font-size: 1rem;
             max-width: 600px;
         }
 
@@ -329,14 +324,14 @@
             background: rgba(100, 255, 218, 0.1);
             border: none;
             color: var(--quantum-teal);
-            font-size: 2rem; /* Reduced font size */
+            font-size: 2rem;
             cursor: pointer;
-            padding: 0.5rem; /* Reduced padding */
+            padding: 0.5rem;
             border-radius: 50%;
             transition: background 0.3s ease;
-            z-index: 1000; /* Ensure arrows are above the carousel */
-            width: 40px; /* Added fixed width */
-            height: 40px; /* Added fixed height */
+            z-index: 1000;
+            width: 2.5rem;
+            height: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -348,11 +343,17 @@
         }
 
         .carousel-control-prev {
-            left: -50px; /* Adjusted position */
+            left: -3rem;
         }
 
         .carousel-control-next {
-            right: -50px; /* Adjusted position */
+            right: -3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
