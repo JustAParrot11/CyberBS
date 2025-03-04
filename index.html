@@ -26,6 +26,23 @@
             --event-horizon: #020c1b;
         }
 
+        /* Base font-size to be used for rem values */
+        html {
+            font-size: 16px;
+        }
+
+        /* Scale down overall sizes on lower resolution displays */
+        @media (max-width: 1920px) {
+            html {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 1440px) {
+            html {
+                font-size: 12px;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -130,9 +147,9 @@
             content: '';
             position: absolute;
             width: 100%;
-            height: 2px;
+            height: 0.125rem;
             background: var(--quantum-teal);
-            bottom: -5px;
+            bottom: -0.3125rem;
             left: 0;
             transform: scaleX(0);
             transform-origin: right;
@@ -185,7 +202,7 @@
             bottom: 0;
             left: 0;
             width: 0%;
-            height: 2px;
+            height: 0.125rem;
             background-color: var(--quantum-teal);
             transition: width 0.3s ease;
         }
@@ -204,14 +221,14 @@
             top: 100%;
             left: 0;
             background: rgba(10, 25, 47, 0.98);
-            min-width: 240px;
+            min-width: 15rem;
             display: none;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(2, 12, 27, 0.5);
+            border: 0.0625rem solid rgba(100, 255, 218, 0.1);
+            border-radius: 0.25rem;
+            box-shadow: 0 0.625rem 1.875rem rgba(2, 12, 27, 0.5);
             padding: 0.5rem 0;
             opacity: 0;
-            transform: translateY(-10px);
+            transform: translateY(-0.625rem);
             transition: all 0.3s ease;
             margin-top: 0.5rem;
             z-index: 1000;
@@ -239,7 +256,7 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 50rem;
             position: relative;
             z-index: 1;
         }
@@ -250,20 +267,20 @@
             margin-bottom: 1.5rem;
             line-height: 1.2;
             font-weight: 600;
-            text-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+            text-shadow: 0 0 1.875rem rgba(100, 255, 218, 0.2);
         }
 
         .hero p {
             font-size: 1.25rem;
             color: var(--stellar-gray);
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 37.5rem;
         }
 
         .cta-button {
             padding: 1rem 2rem;
             background: transparent;
-            border: 1px solid var(--quantum-teal);
+            border: 0.0625rem solid var(--quantum-teal);
             color: var(--quantum-teal);
             font-size: 1rem;
             cursor: pointer;
@@ -277,15 +294,15 @@
         /* Updated Carousel Styles */
         .carousel-section {
             position: absolute;
-            top: 20%; /* Move the carousel slightly lower */
+            top: 20%;
             right: 5%;
-            width: 50vw; /* Increased width for larger carousel */
-            max-width: 800px; /* Larger max size */
-            aspect-ratio: 16 / 9; /* Ensures proportional resizing */
+            width: 50vw;
+            max-width: 50rem;
+            aspect-ratio: 16 / 9;
             background: var(--deep-space);
             z-index: 1;
-            box-shadow: -10px 0 30px rgba(2, 12, 27, 0.5);
-            border-radius: 12px;
+            box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
+            border-radius: 0.75rem;
             overflow: hidden;
         }
 
@@ -313,7 +330,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 0.5rem;
         }
 
         /* Responsive text overlay */
@@ -376,8 +393,8 @@
         /* Responsive adjustments for Carousel Section */
         @media (max-width: 1024px) {
             .carousel-section {
-                width: 55vw; /* Slightly larger width on smaller screens */
-                max-width: 700px;
+                width: 55vw;
+                max-width: 43.75rem;
                 top: 20%;
             }
         }
@@ -385,7 +402,7 @@
         @media (max-width: 768px) {
             .carousel-section {
                 position: relative;
-                width: 90vw; /* Full width on smaller devices */
+                width: 90vw;
                 max-width: none;
                 top: 15%;
                 right: auto;
