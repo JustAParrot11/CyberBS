@@ -232,6 +232,7 @@
             align-items: center;
             padding: 0 5%;
             position: relative;
+            flex-wrap: wrap;
         }
 
         .hero-content {
@@ -371,44 +372,54 @@
 
         /* Responsive adjustments for Carousel Section */
         @media (max-width: 1024px) {
-            .carousel-section {
-                width: clamp(280px, 55vw, 43.75rem);
-                top: 20%;
+            .hero {
+                padding-top: 4rem;
+                min-height: auto;
             }
-        }
-
-        @media (max-width: 768px) {
+            
             .carousel-section {
                 position: relative;
-                width: 90vw;
-                max-width: none;
-                top: 15%;
+                top: 0;
                 right: auto;
+                margin: 3rem auto;
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: clamp(1.5rem, 4vw, 1.8rem);
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 5% 0;
             }
-            .hero p {
-                font-size: clamp(0.8rem, 3vw, 1rem);
+            
+            .hero-content {
+                text-align: center;
+                margin-bottom: 2rem;
             }
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
+
             .carousel-section {
+                width: 90vw;
+                margin: 2rem auto;
+                position: relative;
+                top: 0;
+                transform: translateX(-50%);
+                left: 50%;
+            }
+
+            .cta-button {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 1rem;
+            }
+            
+            .carousel-section {
+                margin: 1.5rem auto;
                 width: 95vw;
-                top: 10%;
-            }
-            .carousel-text h3 {
-                font-size: clamp(1rem, 3vw, 1.2rem);
-            }
-            .carousel-text p {
-                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             }
         }
     </style>
@@ -532,8 +543,9 @@
                 const dx = this.node1.x - this.node2.x;
                 const dy = this.node1.y - this.node2.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 200) {
-                    const alpha = 1 - distance / 200;
+                const maxDistance = Math.min(200, window.innerWidth * 0.2); // Dynamic distance threshold (20% of screen width)
+                if (distance < maxDistance) {
+                    const alpha = 1 - distance / maxDistance;
                     ctx.beginPath();
                     ctx.moveTo(this.node1.x, this.node1.y);
                     ctx.lineTo(this.node2.x, this.node2.y);
@@ -546,7 +558,10 @@
 
         let nodes = [];
         function createNodes() {
-            nodes = Array.from({ length: 150 }, () => new Node());
+            const baseNodeCount = 150; // Base number of nodes for a standard screen width
+            const screenWidthFactor = window.innerWidth / 1920; // Adjust based on a reference screen width (e.g., 1920px)
+            const nodeCount = Math.max(50, Math.floor(baseNodeCount * screenWidthFactor)); // Ensure a minimum of 50 nodes
+            nodes = Array.from({ length: nodeCount }, () => new Node());
         }
         createNodes();
 
