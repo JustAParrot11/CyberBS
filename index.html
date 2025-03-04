@@ -26,21 +26,9 @@
             --event-horizon: #020c1b;
         }
 
-        /* Base font-size to be used for rem values */
+        /* Use clamp() so the base font-size scales dynamically */
         html {
-            font-size: 16px;
-        }
-
-        /* Scale down overall sizes on lower resolution displays */
-        @media (max-width: 1920px) {
-            html {
-                font-size: 14px;
-            }
-        }
-        @media (max-width: 1440px) {
-            html {
-                font-size: 12px;
-            }
+            font-size: clamp(12px, 1.2vw, 16px);
         }
 
         * {
@@ -65,6 +53,7 @@
             pointer-events: none;
         }
 
+        /* Navigation */
         nav {
             padding: 1.5rem 5%;
             display: flex;
@@ -76,27 +65,16 @@
             z-index: 2;
         }
         
-        /* Responsive adjustments for Navigation */
-        @media (max-width: 768px) {
-            nav {
-                flex-wrap: wrap;
-                padding: 1rem 2%;
-            }
-            .nav-group {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-                width: 100%;
-                margin-top: 1rem;
-            }
-            .nav-item {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
+        /* Reduce nav scale on smaller screens */
+        @media (max-width: 1920px) {
+            nav { padding: 1rem 4%; }
+        }
+        @media (max-width: 1440px) {
+            nav { padding: 0.75rem 3%; }
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2vw, 2rem);
             font-weight: 600;
             color: var(--quantum-teal);
             position: relative;
@@ -107,39 +85,39 @@
         }
 
         .logo .pulsing-dot {
-            width: 10px;
-            height: 10px;
+            width: 0.625rem;
+            height: 0.625rem;
             background-color: var(--quantum-teal);
             border-radius: 50%;
-            margin-left: 10px;
+            margin-left: 0.625rem;
             animation: pulse 1.5s infinite;
-            box-shadow: 0 0 5px var(--quantum-teal), 0 0 10px var(--quantum-teal), 0 0 20px var(--quantum-teal);
+            box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal);
         }
 
         @keyframes pulse {
             0% {
                 transform: scale(0.8);
                 opacity: 0.7;
-                box-shadow: 0 0 5px var(--quantum-teal), 0 0 10px var(--quantum-teal), 0 0 20px var(--quantum-teal);
+                box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal);
             }
             50% {
                 transform: scale(1.2);
                 opacity: 1;
-                box-shadow: 0 0 10px var(--quantum-teal), 0 0 20px var(--quantum-teal), 0 0 40px var(--quantum-teal);
+                box-shadow: 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal), 0 0 2.5rem var(--quantum-teal);
             }
             100% {
                 transform: scale(0.8);
                 opacity: 0.7;
-                box-shadow: 0 0 5px var(--quantum-teal), 0 0 10px var(--quantum-teal), 0 0 20px var(--quantum-teal);
+                box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal);
             }
         }
 
         @keyframes glow {
             0% {
-                text-shadow: 0 0 5px rgba(100, 255, 218, 0.5), 0 0 10px rgba(100, 255, 218, 0.5);
+                text-shadow: 0 0 0.3125rem rgba(100, 255, 218, 0.5), 0 0 0.625rem rgba(100, 255, 218, 0.5);
             }
             100% {
-                text-shadow: 0 0 20px rgba(100, 255, 218, 0.8), 0 0 30px rgba(100, 255, 218, 0.8);
+                text-shadow: 0 0 1.25rem rgba(100, 255, 218, 0.8), 0 0 1.875rem rgba(100, 255, 218, 0.8);
             }
         }
 
@@ -247,6 +225,7 @@
             padding-left: 2rem;
         }
 
+        /* Hero Section */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -262,7 +241,7 @@
         }
 
         .hero h1 {
-            font-size: 2.15rem;
+            font-size: clamp(1.8rem, 3vw, 2.15rem);
             color: var(--quantum-teal);
             margin-bottom: 1.5rem;
             line-height: 1.2;
@@ -271,7 +250,7 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--stellar-gray);
             margin-bottom: 2.5rem;
             max-width: 37.5rem;
@@ -291,12 +270,12 @@
             background: rgba(100, 255, 218, 0.05);
         }
 
-        /* Updated Carousel Styles */
+        /* Carousel Section */
         .carousel-section {
             position: absolute;
             top: 20%;
             right: 5%;
-            width: 50vw;
+            width: clamp(300px, 50vw, 50rem);
             max-width: 50rem;
             aspect-ratio: 16 / 9;
             background: var(--deep-space);
@@ -333,7 +312,7 @@
             border-radius: 0.5rem;
         }
 
-        /* Responsive text overlay */
+        /* Carousel text overlay */
         .carousel-text {
             position: absolute;
             bottom: 0;
@@ -345,17 +324,17 @@
         }
 
         .carousel-text h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             margin-bottom: 0.3rem;
             color: var(--quantum-teal);
         }
 
         .carousel-text p {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
             margin: 0;
         }
 
-        /* Navigation Controls */
+        /* Carousel navigation controls */
         .carousel-control-prev,
         .carousel-control-next {
             position: absolute;
@@ -393,8 +372,7 @@
         /* Responsive adjustments for Carousel Section */
         @media (max-width: 1024px) {
             .carousel-section {
-                width: 55vw;
-                max-width: 43.75rem;
+                width: clamp(280px, 55vw, 43.75rem);
                 top: 20%;
             }
         }
@@ -413,10 +391,10 @@
         
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: clamp(1.5rem, 4vw, 1.8rem);
             }
             .hero p {
-                font-size: 1rem;
+                font-size: clamp(0.8rem, 3vw, 1rem);
             }
             .cta-button {
                 padding: 0.8rem 1.5rem;
@@ -427,10 +405,10 @@
                 top: 10%;
             }
             .carousel-text h3 {
-                font-size: 1.2rem;
+                font-size: clamp(1rem, 3vw, 1.2rem);
             }
             .carousel-text p {
-                font-size: 0.9rem;
+                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             }
         }
     </style>
