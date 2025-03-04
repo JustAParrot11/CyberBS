@@ -4,11 +4,10 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta name="description" content="CyberBS | Cybersecurity. Discover tools, scans, and resources - Your go-to library for all things cybersecurity.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CyberBS | Cybersecurity Redefined</title>
 
     <link rel="stylesheet" 
@@ -16,7 +15,7 @@
       integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" 
       crossorigin="anonymous"
       referrerpolicy="no-referrer">
-    
+
     <style>
         :root {
             --deep-space: #0a192f;
@@ -26,7 +25,6 @@
             --event-horizon: #020c1b;
         }
 
-        /* Use clamp() so the base font-size scales dynamically */
         html {
             font-size: clamp(12px, 1.2vw, 16px);
         }
@@ -51,27 +49,24 @@
             height: 100vh;
             z-index: -1;
             pointer-events: none;
+            will-change: transform;
         }
 
-        /* Navigation */
-        nav {
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 25, 47, 0.97);
-            backdrop-filter: blur(12px);
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Reduce nav scale on smaller screens */
-        @media (max-width: 1920px) {
-            nav { padding: 1rem 4%; }
-        }
-        @media (max-width: 1440px) {
-            nav { padding: 0.75rem 3%; }
-        }
+        /* Navigation - Original + Enhanced */
+    	nav {
+        	padding: clamp(0.75rem, 5%, 1.5rem);
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: center;
+        	background: rgba(10, 25, 47, 0.97);
+        	backdrop-filter: blur(12px);
+        	position: fixed; /* Changed from relative */
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	z-index: 2;
+    	}
+
 
         .logo {
             font-size: clamp(1.5rem, 2vw, 2rem);
@@ -141,7 +136,7 @@
 
         .nav-group {
             display: flex;
-            gap: 2rem;
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         .nav-item {
@@ -219,24 +214,60 @@
             transform: translateY(0);
         }
 
-        .dropdown-item:hover {
-            background: rgba(100, 255, 218, 0.05);
+        /* Mobile Navigation Additions */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
             color: var(--quantum-teal);
-            padding-left: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            cursor: pointer;
+            padding: 0.5rem;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
-            flex-wrap: wrap;
+        @media (max-width: 768px) {
+            .nav-group {
+                position: fixed;
+                top: 4.5rem;
+                right: 0;
+                background: var(--deep-space);
+                flex-direction: column;
+                width: min(90vw, 300px);
+                padding: 1.5rem;
+                transform: translateX(100%);
+                border: 1px solid rgba(100, 255, 218, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-group.active {
+                transform: translateX(0);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .dropdown {
+                position: static;
+                margin-top: 0.5rem;
+                box-shadow: none;
+                border: none;
+            }
         }
+
+        /* Hero Section - Original + Enhanced */
+        .hero {
+        	min-height: 90vh;
+        	display: flex;
+        	align-items: center;
+        	padding: calc(clamp(0.75rem, 5%, 1.5rem) * 2 + 2.5rem) clamp(5%, 10vw, 10%) 0; /* Added top padding */
+        	position: relative;
+        	flex-wrap: wrap;
+        	margin-top: 4rem; /* Compensate for fixed nav */
+    	}
 
         .hero-content {
-            max-width: 50rem;
+            max-width: min(50rem, 90%);
             position: relative;
             z-index: 1;
         }
@@ -265,26 +296,24 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-width: 48px;
+            min-height: 48px;
         }
 
         .cta-button:hover {
             background: rgba(100, 255, 218, 0.05);
         }
 
-        /* Carousel Section */
+        /* Carousel Section - Original + Enhanced */
         .carousel-section {
-            position: absolute;
-            top: 20%;
-            right: 5%;
-            width: clamp(300px, 50vw, 50rem);
-            max-width: 50rem;
-            aspect-ratio: 16 / 9;
-            background: var(--deep-space);
-            z-index: 1;
-            box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
-            border-radius: 0.75rem;
-            overflow: hidden;
-        }
+        	width: min(90vw, 1200px);
+        	aspect-ratio: 16/9;
+        	margin: -5rem auto -10rem; /* Changed from 2rem auto */
+        	position: relative;
+        	box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
+        	border-radius: 0.75rem;
+        	overflow: hidden;
+    	}
 
         .carousel {
             position: relative;
@@ -313,7 +342,6 @@
             border-radius: 0.5rem;
         }
 
-        /* Carousel text overlay */
         .carousel-text {
             position: absolute;
             bottom: 0;
@@ -335,7 +363,6 @@
             margin: 0;
         }
 
-        /* Carousel navigation controls */
         .carousel-control-prev,
         .carousel-control-next {
             position: absolute;
@@ -370,7 +397,15 @@
             right: 10px;
         }
 
-        /* Responsive adjustments for Carousel Section */
+        /* Responsive Adjustments */
+        @media (max-width: 1920px) {
+            nav { padding: 1rem 4%; }
+        }
+
+        @media (max-width: 1440px) {
+            nav { padding: 0.75rem 3%; }
+        }
+
         @media (max-width: 1024px) {
             .hero {
                 padding-top: 4rem;
@@ -379,18 +414,14 @@
             
             .carousel-section {
                 position: relative;
-                top: 0;
-                right: auto;
                 margin: 3rem auto;
-                left: 50%;
-                transform: translateX(-50%);
             }
         }
 
         @media (max-width: 768px) {
             .hero {
-                min-height: auto;
                 padding: 2rem 5% 0;
+                min-height: auto;
             }
             
             .hero-content {
@@ -399,12 +430,7 @@
             }
 
             .carousel-section {
-                width: 90vw;
-                margin: 2rem auto;
-                position: relative;
-                top: 0;
-                transform: translateX(-50%);
-                left: 50%;
+                width: 95vw;
             }
 
             .cta-button {
@@ -416,11 +442,6 @@
             .hero {
                 padding-top: 1rem;
             }
-            
-            .carousel-section {
-                margin: 1.5rem auto;
-                width: 95vw;
-            }
         }
     </style>
 </head>
@@ -429,6 +450,7 @@
 
     <nav>
         <a href="index.html" class="logo">CyberBS<span class="pulsing-dot"></span></a>
+        <button class="hamburger" aria-label="Menu">☰</button>
         <div class="nav-group">
             <div class="nav-item">
                 Drop Down 1
@@ -466,12 +488,18 @@
         </div>
     </section>
 
-    <!-- Carousel Section (Now Positioned to the Right) -->
     <section class="carousel-section">
         <div class="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/vt.jpg" alt="Slide 1">
+                    <img 
+                        srcset="images/vt-400.jpg 400w,
+                                images/vt-800.jpg 800w,
+                                images/vt-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/vt-800.jpg" 
+                        alt="Security analysis"
+                        loading="lazy">
                     <div class="carousel-text">
                         <a href="https://www.virustotal.com" target="_blank" style="text-decoration: none;">
                             <h3>Virus Total</h3>
@@ -481,7 +509,7 @@
                 </div>
 
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/800x400" alt="Slide 3">
+                    <img src="https://via.placeholder.com/800x400" alt="Slide 3" loading="lazy">
                     <div class="carousel-text">
                         <h3>Heading 3</h3>
                         <p>Short description for slide 3.</p>
@@ -494,7 +522,7 @@
     </section>
 
     <script>
-        // Network Canvas Animation
+        // Network Canvas Animation (Original)
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -543,7 +571,7 @@
                 const dx = this.node1.x - this.node2.x;
                 const dy = this.node1.y - this.node2.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                const maxDistance = Math.min(200, window.innerWidth * 0.2); // Dynamic distance threshold (20% of screen width)
+                const maxDistance = Math.min(200, window.innerWidth * 0.2);
                 if (distance < maxDistance) {
                     const alpha = 1 - distance / maxDistance;
                     ctx.beginPath();
@@ -558,9 +586,9 @@
 
         let nodes = [];
         function createNodes() {
-            const baseNodeCount = 150; // Base number of nodes for a standard screen width
-            const screenWidthFactor = window.innerWidth / 1920; // Adjust based on a reference screen width (e.g., 1920px)
-            const nodeCount = Math.max(50, Math.floor(baseNodeCount * screenWidthFactor)); // Ensure a minimum of 50 nodes
+            const baseNodeCount = 150;
+            const screenWidthFactor = window.innerWidth / 1920;
+            const nodeCount = Math.max(50, Math.floor(baseNodeCount * screenWidthFactor));
             nodes = Array.from({ length: nodeCount }, () => new Node());
         }
         createNodes();
@@ -574,30 +602,44 @@
 
             nodes.forEach((node1, i) => {
                 nodes.slice(i + 1).forEach(node2 => {
-                    const connection = new Connection(node1, node2);
-                    connection.draw();
+                    new Connection(node1, node2).draw();
                 });
             });
 
             requestAnimationFrame(animate);
         }
 
-        // Debounce resize handling
+        // Enhanced Resize Handling
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
                 setCanvasSize();
-                createNodes(); // Recreate nodes on resize
+                createNodes();
             }, 200);
         });
 
-        // Initialize animation
         animate();
 
-        // Carousel Functionality
+        // Carousel Functionality (Original + Touch Support)
         let currentIndex = 0;
         let autoSlideInterval;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+            resetAutoSlide();
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+            resetAutoSlide();
+        }
 
         function startAutoSlide() {
             autoSlideInterval = setInterval(nextSlide, 5000);
@@ -608,27 +650,31 @@
             startAutoSlide();
         }
 
-        function showSlide(index) {
-            const carouselInner = document.querySelector('.carousel-inner');
-            const slides = document.querySelectorAll('.carousel-item');
-            if (index >= slides.length) currentIndex = 0;
-            if (index < 0) currentIndex = slides.length - 1;
-            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+        // Touch Support Additions
+        let touchStartX = 0;
+        const carouselContainer = document.querySelector('.carousel-section');
 
-        function nextSlide() {
-            currentIndex++;
-            showSlide(currentIndex);
-            resetAutoSlide();
-        }
+        carouselContainer.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+        });
 
-        function prevSlide() {
-            currentIndex--;
-            showSlide(currentIndex);
-            resetAutoSlide();
-        }
+        carouselContainer.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? nextSlide() : prevSlide();
+            }
+        });
 
-        // Start the auto-slide initially
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navGroup = document.querySelector('.nav-group');
+
+        hamburger.addEventListener('click', () => {
+            navGroup.classList.toggle('active');
+        });
+
         startAutoSlide();
     </script>
 </body>
