@@ -453,6 +453,31 @@
                 padding-top: 1rem;
             }
         }
+
+        /* Add this CSS rule to underline the links on hover */
+        .carousel-text a {
+    		position: relative;
+    		text-decoration: none !important; /* Force override any inline styles */
+    		display: inline-block; /* Required for proper underline positioning */
+	}
+
+	.carousel-text a::after {
+    		content: '';
+    		position: absolute;
+    		width: 100%;
+    		height: 2px;
+    		background: var(--quantum-teal);
+    		bottom: -3px;
+    		left: 0;
+   	 transform: scaleX(0);
+    		transform-origin: right;
+    		transition: transform 0.2s ease-in-out;
+	}
+
+	.carousel-text a:hover::after {
+    		transform: scaleX(1);
+   		transform-origin: left;
+	}
     </style>
 </head>
 <body>
@@ -517,7 +542,7 @@
                     alt="Security analysis"
                     loading="lazy">
                 <div class="carousel-text">
-                    <a href="https://www.virustotal.com" target="_blank" style="text-decoration: none;">
+                    <a href="https://www.virustotal.com" target="_blank">
                         <h3>VirusTotal</h3>
                     </a>
                     <p>VirusTotal is a free online security platform that scans files, URLs, and IPs with multiple antivirus engines, detecting malware, viruses, and cyber threats to enhance digital safety.</p>
@@ -535,7 +560,7 @@
                     alt="Slide 2"
                     loading="lazy">
                 <div class="carousel-text">
-                    <a href="https://app.any.run/" target="_blank" style="text-decoration: none;">
+                    <a href="https://app.any.run" target="_blank">
                         <h3>ANY.RUN</h3>
                     </a>
                     <p>ANY.RUN is an interactive malware analysis sandbox that allows users to safely analyze and investigate malicious files and URLs in a virtualized environment in real time.</p>
@@ -553,7 +578,7 @@
                     alt="Slide 3"
                     loading="lazy">
                 <div class="carousel-text">
-                    <a href="https://www.example.com" target="_blank" style="text-decoration: none;">
+                    <a href="https://TE232ST.COM" target="_blank">
                         <h3>Tool 3</h3>
                     </a>
                     <p>Description for Tool 3. This tool helps with ABC in cybersecurity.</p>
@@ -571,7 +596,7 @@
                     alt="Slide 4"
                     loading="lazy">
                 <div class="carousel-text">
-                    <a href="https://www.example.com" target="_blank" style="text-decoration: none;">
+                    <a href="https://TE232ST.COM" target="_blank">
                         <h3>Tool 4</h3>
                     </a>
                     <p>Description for Tool 4. This tool helps with DEF in cybersecurity.</p>
@@ -589,7 +614,7 @@
                     alt="Slide 5"
                     loading="lazy">
                 <div class="carousel-text">
-                    <a href="https://www.example.com" target="_blank" style="text-decoration: none;">
+                    <a href="https://TE232ST.COM" target="_blank">
                         <h3>Tool 5</h3>
                     </a>
                     <p>Description for Tool 5. This tool helps with GHI in cybersecurity.</p>
