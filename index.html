@@ -300,7 +300,6 @@
             background: rgba(100, 255, 218, 0.05);
         }
 
-        /* New heading styles */
         .carousel-heading {
             width: 100%;
             text-align: center;
@@ -308,7 +307,7 @@
         }
 
         .carousel-heading h1 {
-            font-size: clamp(1.5rem, 2.5vw, 1.8rem); /* Adjusted font size */
+            font-size: clamp(1.5rem, 2.5vw, 1.8rem);
             color: var(--quantum-teal);
             line-height: 1.2;
             font-weight: 600;
@@ -324,6 +323,16 @@
             box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
             border-radius: 0.75rem;
             overflow: hidden;
+            /* Animation additions */
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s ease-out;
+            will-change: transform, opacity;
+        }
+
+        .carousel-section.carousel-visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .carousel {
@@ -454,30 +463,29 @@
             }
         }
 
-        /* Add this CSS rule to underline the links on hover */
         .carousel-text a {
-    		position: relative;
-    		text-decoration: none !important; /* Force override any inline styles */
-    		display: inline-block; /* Required for proper underline positioning */
-	}
+            position: relative;
+            text-decoration: none !important;
+            display: inline-block;
+        }
 
-	.carousel-text a::after {
-    		content: '';
-    		position: absolute;
-    		width: 100%;
-    		height: 2px;
-    		background: var(--quantum-teal);
-    		bottom: -3px;
-    		left: 0;
-   	 transform: scaleX(0);
-    		transform-origin: right;
-    		transition: transform 0.2s ease-in-out;
-	}
+        .carousel-text a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--quantum-teal);
+            bottom: -3px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.2s ease-in-out;
+        }
 
-	.carousel-text a:hover::after {
-    		transform: scaleX(1);
-   		transform-origin: left;
-	}
+        .carousel-text a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
     </style>
 </head>
 <body>
@@ -523,7 +531,6 @@
         </div>
     </section>
 
-    <!-- New heading -->
     <section class="carousel-heading">
         <h1>Tools Referenced On Our Site:</h1>
     </section>
@@ -531,7 +538,6 @@
     <section class="carousel-section">
     <div class="carousel">
         <div class="carousel-inner">
-            <!-- VirusTotal Slide -->
             <div class="carousel-item active">
                 <img 
                     srcset="images/vt-400.jpg 400w,
@@ -549,7 +555,6 @@
                 </div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="carousel-item">
                 <img 
                     srcset="images/any-run-400.jpg 400w,
@@ -567,7 +572,6 @@
                 </div>
             </div>
 
-            <!-- Slide 3 -->
             <div class="carousel-item">
                 <img 
                     srcset="images/slide3-400.jpg 400w,
@@ -585,7 +589,6 @@
                 </div>
             </div>
 
-            <!-- Slide 4 -->
             <div class="carousel-item">
                 <img 
                     srcset="images/slide4-400.jpg 400w,
@@ -603,7 +606,6 @@
                 </div>
             </div>
 
-            <!-- Slide 5 -->
             <div class="carousel-item">
                 <img 
                     srcset="images/slide5-400.jpg 400w,
@@ -773,6 +775,27 @@
 
         hamburger.addEventListener('click', () => {
             navGroup.classList.toggle('active');
+        });
+
+        // Scroll-triggered animation observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselSection = document.querySelector('.carousel-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('carousel-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.35
+            });
+
+            if (carouselSection) {
+                observer.observe(carouselSection);
+            }
         });
 
         startAutoSlide();
