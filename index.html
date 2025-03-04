@@ -323,7 +323,6 @@
             box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
             border-radius: 0.75rem;
             overflow: hidden;
-            /* Animation additions */
             opacity: 0;
             transform: translateX(-100px);
             transition: all 1s ease-out;
@@ -333,6 +332,12 @@
         .carousel-section.carousel-visible {
             opacity: 1;
             transform: translateX(0);
+        }
+
+        .carousel-section.carousel-hidden {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s ease-out;
         }
 
         .carousel {
@@ -780,13 +785,25 @@
         // Scroll-triggered animation observer
         document.addEventListener('DOMContentLoaded', () => {
             const carouselSection = document.querySelector('.carousel-section');
-            
+            let lastScrollY = window.scrollY;
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('carousel-visible');
-                        observer.unobserve(entry.target);
+                        entry.target.classList.remove('carousel-hidden');
+                    } else {
+                        // Check scroll direction
+                        if (window.scrollY > lastScrollY) {
+                            // Scrolling down
+                            entry.target.classList.remove('carousel-hidden');
+                        } else {
+                            // Scrolling up
+                            entry.target.classList.add('carousel-hidden');
+                            entry.target.classList.remove('carousel-visible');
+                        }
                     }
+                    lastScrollY = window.scrollY;
                 });
             }, {
                 rootMargin: '0px',
@@ -796,6 +813,11 @@
             if (carouselSection) {
                 observer.observe(carouselSection);
             }
+
+            // Track scroll direction
+            window.addEventListener('scroll', () => {
+                lastScrollY = window.scrollY;
+            });
         });
 
         startAutoSlide();
