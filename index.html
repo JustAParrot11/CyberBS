@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -425,83 +426,101 @@
 
     <script>
         // Network Canvas Animation
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById('networkCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function setCanvasSize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+    }
 
-        class Node {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.3;
-                this.vy = (Math.random() - 0.5) * 0.3;
-                this.radius = 2.5;
-            }
+    setCanvasSize();
 
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
+    class Node {
+        constructor() {
+            this.reset();
+        }
 
-            draw() {
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.3;
+            this.vy = (Math.random() - 0.5) * 0.3;
+            this.radius = 2.5;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(100, 255, 218, 0.5)';
+            ctx.fill();
+        }
+    }
+
+    class Connection {
+        constructor(node1, node2) {
+            this.node1 = node1;
+            this.node2 = node2;
+        }
+
+        draw() {
+            const dx = this.node1.x - this.node2.x;
+            const dy = this.node1.y - this.node2.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < 200) {
+                const alpha = 1 - distance / 200;
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(100, 255, 218, 0.5)';
-                ctx.fill();
+                ctx.moveTo(this.node1.x, this.node1.y);
+                ctx.lineTo(this.node2.x, this.node2.y);
+                ctx.strokeStyle = `rgba(100, 255, 218, ${alpha})`;
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
             }
         }
+    }
 
-        class Connection {
-            constructor(node1, node2) {
-                this.node1 = node1;
-                this.node2 = node2;
-            }
+    let nodes = [];
+    function createNodes() {
+        nodes = Array.from({ length: 150 }, () => new Node());
+    }
+    createNodes();
 
-            draw() {
-                const dx = this.node1.x - this.node2.x;
-                const dy = this.node1.y - this.node2.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 200) {
-                    const alpha = 1 - distance / 200;
-                    ctx.beginPath();
-                    ctx.moveTo(this.node1.x, this.node1.y);
-                    ctx.lineTo(this.node2.x, this.node2.y);
-                    ctx.strokeStyle = `rgba(100, 255, 218, ${alpha})`;
-                    ctx.lineWidth = 0.8;
-                    ctx.stroke();
-                }
-            }
-        }
-
-        const nodes = Array.from({ length: 150 }, () => new Node());
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            nodes.forEach(node => {
-                node.update();
-                node.draw();
-            });
-
-            nodes.forEach((node1, i) => {
-                nodes.slice(i + 1).forEach(node2 => {
-                    const connection = new Connection(node1, node2);
-                    connection.draw();
-                });
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        nodes.forEach(node => {
+            node.update();
+            node.draw();
         });
 
-        // Initialize animation
-        animate();
+        nodes.forEach((node1, i) => {
+            nodes.slice(i + 1).forEach(node2 => {
+                const connection = new Connection(node1, node2);
+                connection.draw();
+            });
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    // Debounce resize handling
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            setCanvasSize();
+            createNodes(); // Recreate nodes on resize
+        }, 200);
+    });
+
+    // Initialize animation
+    animate();
 
         // Carousel Functionality
         let currentIndex = 0;
