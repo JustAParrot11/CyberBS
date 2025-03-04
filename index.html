@@ -52,21 +52,19 @@
             will-change: transform;
         }
 
-        /* Navigation - Original + Enhanced */
-    	nav {
-        	padding: clamp(0.75rem, 5%, 1.5rem);
-        	display: flex;
-        	justify-content: space-between;
-        	align-items: center;
-        	background: rgba(10, 25, 47, 0.97);
-        	backdrop-filter: blur(12px);
-        	position: fixed; /* Changed from relative */
-        	top: 0;
-        	left: 0;
-        	width: 100%;
-        	z-index: 2;
-    	}
-
+        nav {
+            padding: clamp(0.75rem, 5%, 1.5rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 25, 47, 0.97);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
 
         .logo {
             font-size: clamp(1.5rem, 2vw, 2rem);
@@ -214,7 +212,6 @@
             transform: translateY(0);
         }
 
-        /* Mobile Navigation Additions */
         .hamburger {
             display: none;
             background: none;
@@ -255,16 +252,15 @@
             }
         }
 
-        /* Hero Section - Original + Enhanced */
         .hero {
-        	min-height: 90vh;
-        	display: flex;
-        	align-items: center;
-        	padding: calc(clamp(0.75rem, 5%, 1.5rem) * 2 + 2.5rem) clamp(5%, 10vw, 10%) 0; /* Added top padding */
-        	position: relative;
-        	flex-wrap: wrap;
-        	margin-top: 4rem; /* Compensate for fixed nav */
-    	}
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: calc(clamp(0.75rem, 5%, 1.5rem) * 2 + 2.5rem) clamp(5%, 10vw, 10%) 0;
+            position: relative;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
 
         .hero-content {
             max-width: min(50rem, 90%);
@@ -304,16 +300,31 @@
             background: rgba(100, 255, 218, 0.05);
         }
 
-        /* Carousel Section - Original + Enhanced */
+        /* New heading styles */
+        .carousel-heading {
+            width: 100%;
+            text-align: center;
+            margin: clamp(-7rem, -2vw, 2rem) 0 1.5rem;
+        }
+
+        .carousel-heading h1 {
+            font-size: clamp(1.5rem, 2.5vw, 1.8rem); /* Adjusted font size */
+            color: var(--quantum-teal);
+            line-height: 1.2;
+            font-weight: 600;
+            text-shadow: 0 0 1.875rem rgba(100, 255, 218, 0.2);
+            margin: 0 auto;
+        }
+
         .carousel-section {
-        	width: min(90vw, 1200px);
-        	aspect-ratio: 16/9;
-        	margin: -5rem auto -10rem; /* Changed from 2rem auto */
-        	position: relative;
-        	box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
-        	border-radius: 0.75rem;
-        	overflow: hidden;
-    	}
+            width: min(90vw, 1200px);
+            aspect-ratio: 16/9;
+            margin: 2rem auto -10rem;
+            position: relative;
+            box-shadow: -0.625rem 0 1.875rem rgba(2, 12, 27, 0.5);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
 
         .carousel {
             position: relative;
@@ -397,7 +408,6 @@
             right: 10px;
         }
 
-        /* Responsive Adjustments */
         @media (max-width: 1920px) {
             nav { padding: 1rem 4%; }
         }
@@ -488,6 +498,11 @@
         </div>
     </section>
 
+    <!-- New heading -->
+    <section class="carousel-heading">
+        <h1>Tools Referenced On Our Site:</h1>
+    </section>
+
     <section class="carousel-section">
         <div class="carousel">
             <div class="carousel-inner">
@@ -522,7 +537,6 @@
     </section>
 
     <script>
-        // Network Canvas Animation (Original)
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -609,7 +623,6 @@
             requestAnimationFrame(animate);
         }
 
-        // Enhanced Resize Handling
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -621,7 +634,6 @@
 
         animate();
 
-        // Carousel Functionality (Original + Touch Support)
         let currentIndex = 0;
         let autoSlideInterval;
         const slides = document.querySelectorAll('.carousel-item');
@@ -650,7 +662,6 @@
             startAutoSlide();
         }
 
-        // Touch Support Additions
         let touchStartX = 0;
         const carouselContainer = document.querySelector('.carousel-section');
 
@@ -667,7 +678,6 @@
             }
         });
 
-        // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navGroup = document.querySelector('.nav-group');
 
