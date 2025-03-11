@@ -3,7 +3,7 @@ Last Updated: 11/03/2025
 Effective Date: 11/03/2025
 
 1. INTRODUCTION
-This Terms of Service Agreement ("Agreement") constitutes a legally binding contract between [Your Full Name] ("Operator," "we," "us," or "our"), the owner and operator of the website cyberbs.co.uk (the "Service"), and any individual, entity, or agent thereof ("User," "you," or "your") accessing or using the Service. By accessing, uploading content to, or interacting with the Service in any manner, you irrevocably agree to comply with and be bound by the terms herein. If you do not unconditionally accept all provisions of this Agreement, you are expressly prohibited from using the Service and must discontinue use immediately.
+This Terms of Service Agreement ("Agreement") constitutes a legally binding contract between CYBERBS LTD ("Operator," "we," "us," or "our"), the owner and operator of the website cyberbs.co.uk (the "Service"), and any individual, entity, or agent thereof ("User," "you," or "your") accessing or using the Service. By accessing, uploading content to, or interacting with the Service in any manner, you irrevocably agree to comply with and be bound by the terms herein. If you do not unconditionally accept all provisions of this Agreement, you are expressly prohibited from using the Service and must discontinue use immediately.
 
 This Agreement governs all use of the Service, including but not limited to webpages, subdomains, APIs, tools, functionalities, and third-party integrations. Your use of the Service constitutes electronic acceptance of these terms under the UK Electronic Communications Act 2000 and the Electronic Signatures Regulations 2002. Continued use after amendments to this Agreement constitutes acceptance of revised terms.
 
