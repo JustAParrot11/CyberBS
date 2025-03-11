@@ -1,4 +1,4 @@
-TERMS OF SERVICE AGREEMENT FOR CYBERBS.CO.UK
+Revised Terms of Service Agreement for CYBERBS.CO.UK
 Last Updated: 11/03/2025
 Effective Date: 11/03/2025
 
@@ -22,11 +22,15 @@ For avoidance of doubt, the following terms shall have the meanings ascribed bel
 
 "Malware": Software designed to disrupt, damage, or gain unauthorized access to systems, including viruses, ransomware, spyware, or trojans.
 
+"Data Controller": The Operator, as defined under GDPR, for anonymized logs retained under Section 9.2.
+
+"Data Processor": The Operator processes Uploaded Files solely as instructed by Users, who remain Data Controllers for such content.
+
 3. ACCEPTANCE OF TERMS
 3.1 Eligibility
 By using the Service, you represent and warrant that:
 
-You are at least 18 years old, or possess verifiable parental/guardian consent if under 18.
+You are at least 18 years old, or possess verifiable parental/guardian consent (e.g., a signed form submitted to [Your Email Address]) if under 18.
 
 You have the legal capacity to enter binding contracts in your jurisdiction.
 
@@ -53,6 +57,8 @@ Static and dynamic malware analysis;
 Generation of basic file reports;
 
 Ephemeral processing of Uploaded Files (deleted within 1 hour).
+
+Security Research Purpose: Analysis of Uploaded Files is conducted solely for security research and falls under lawful exceptions under the Copyright, Designs and Patents Act 1988 (e.g., Section 50BA for security testing).
 
 4.2 Exclusions
 The Service explicitly excludes:
@@ -85,6 +91,8 @@ Constitutes Illegal Content (e.g., malware, child exploitation materials, terror
 
 Violates third-party privacy, publicity, or contractual rights.
 
+You are solely responsible for ensuring Uploaded Files comply with GDPR. The Operator disclaims liability for violations caused by User-uploaded content.
+
 5.3 Security Restrictions
 You must not:
 
@@ -96,6 +104,9 @@ Reverse-engineer, decompile, or disassemble the Service;
 
 Interfere with Service availability (e.g., DDoS attacks, resource overconsumption).
 
+5.4 Risk Acceptance
+By using the Service, you acknowledge and accept that malware analysis involves inherent risks, including but not limited to unintended execution, propagation, or system damage. You assume full responsibility for any consequences arising from the analysis of Uploaded Files.
+
 6. DISCLAIMER OF WARRANTIES
 TO THE FULLEST EXTENT PERMITTED BY UK LAW, THE OPERATOR EXPLICITLY DISCLAIMS ALL WARRANTIES, INCLUDING:
 
@@ -106,6 +117,8 @@ Containment: No guarantee that malware will be isolated or rendered harmless;
 Accuracy: Analysis Results may be incomplete, erroneous, or misleading;
 
 Availability: Service may be interrupted, suspended, or terminated without notice.
+
+No system is impenetrable. The Operator disclaims liability for breaches caused by vulnerabilities not reasonably foreseeable at the time of service delivery.
 
 7. LIMITATION OF LIABILITY
 7.1 Exclusion of Damages
@@ -137,7 +150,8 @@ Claims arising from your breach of this Agreement;
 Costs (including reasonable attorneys’ fees, expert witness fees);
 
 Third-party disputes over Uploaded Files or Analysis Results.
-Indemnification obligations survive termination of this Agreement.
+
+Your indemnification obligations exclude liabilities arising from the Operator’s gross negligence or willful misconduct.
 
 9. DATA HANDLING
 9.1 Data Deletion
@@ -152,6 +166,8 @@ Legal compliance (e.g., warrants, subpoenas);
 
 Service optimization.
 
+The Operator acts as a Data Controller for retained logs under GDPR.
+
 9.3 GDPR Compliance
 Data processing adheres to UK GDPR. Users may submit data subject requests via [Your Email Address].
 
@@ -163,6 +179,7 @@ Isolation: Uploaded Files processed in ephemeral Docker containers with no inter
 Encryption: AES-256 for data in transit and at rest;
 
 Network Segmentation: Firewalled environments segregated from public networks.
+
 No Guarantees: Absolute security is not warranted.
 
 11. TERMINATION
@@ -193,8 +210,11 @@ This document supersedes all prior agreements. Amendments require written consen
 
 16. CONTACT INFORMATION
 For inquiries:
+
 Email: [Your Email Address]
+
 Postal Address: [Your UK Address]
+
 Response Time: 30 business days for non-urgent matters.
 
 17. ANNEXES
@@ -204,6 +224,6 @@ Acceptable Use Policy: [Link], prohibiting abuse.
 
 YOUR LEGAL RIGHTS: This Agreement does not override statutory consumer rights under the Consumer Rights Act 2015. Consult the Citizens Advice Bureau for guidance.
 
-FORCE MAJEURE: The Operator is not liable for failures due to events beyond reasonable control (e.g., natural disasters, cyberattacks).
+FORCE MAJEURE: The Operator is not liable for failures due to events beyond reasonable control (e.g., natural disasters, cyberattacks, government restrictions).
 
-ACKNOWLEDGEMENT: BY USING THE SERVICE, YOU IRREVOCABLY AGREE TO ALL TERMS HEREIN. IF YOU DO NOT AGREE, DISCONTINUE USE IMMEDIATELY.
+ACKNOWLEDGEMENT: BY USING THE SERVICE, YOU IRREVOCABLY AGREE TO ALL TERMS HEREIN, INCLUDING INHERENT RISKS OF MALWARE ANALYSIS. IF YOU DO NOT AGREE, DISCONTINUE USE IMMEDIATELY.
