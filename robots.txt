@@ -1,1 +1,11 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Disallow:
 
+# Block the Internet Archive (Wayback Machine)
+User-agent: ia_archiver
+Disallow: /
+
+# Block Internet Archive’s partner bot
+User-agent: archive.org_bot
+Disallow: /
