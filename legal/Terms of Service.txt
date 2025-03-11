@@ -20,7 +20,7 @@ For avoidance of doubt, the following terms shall have the meanings ascribed bel
 
 "Malware": Software designed to disrupt, damage, or gain unauthorized access to systems, including viruses, ransomware, spyware, or trojans.
 
-"Personal Data": Any information that could directly or indirectly identify an individual, including but not limited to names, addresses, email addresses, phone numbers, GPS coordinates, or EXIF metadata.
+"Personal Data": Any information that could directly or indirectly identify an individual, including but not limited to names, addresses, email addresses, phone numbers, financial records, health information, biometric data, GPS coordinates, or EXIF metadata (e.g., geolocation tags, device identifiers, timestamps).
 
 3. ACCEPTANCE OF TERMS
 3.1 Eligibility
@@ -52,6 +52,8 @@ Static and dynamic malware analysis;
 
 Generation of basic file reports;
 
+EXIF metadata extraction (e.g., timestamps, device information);
+
 Ephemeral processing of Uploaded Files (deleted within 1 hour).
 
 Security Research Purpose: Analysis of Uploaded Files is conducted solely for security research and falls under lawful exceptions under the Copyright, Designs and Patents Act 1988 (e.g., Section 50BA for security testing).
@@ -81,13 +83,13 @@ You must not upload, transmit, or process any content that:
 
 Contains Personal Data (e.g., names, addresses, financial/health records, GPS coordinates in EXIF metadata, or identifiable metadata);
 
-Includes files with EXIF tags that embed geolocation data (e.g., GPS coordinates), private timestamps, or device identifiers;
+Includes files with EXIF tags that embed geolocation data (e.g., GPS coordinates), private timestamps, device identifiers, or any data that could identify an individual;
 
 Infringes intellectual property rights (e.g., software, media, trade secrets);
 
 Constitutes Illegal Content (e.g., malware, child exploitation materials, terroristic content).
 
-You are solely responsible for scrubbing all Personal Data and EXIF metadata from files before upload. Violations will result in immediate termination of access.
+You are solely responsible for scrubbing all Personal Data and EXIF metadata from files before upload. The Service is not designed to handle, secure, or process Personal Data. Violations will result in immediate termination of access.
 
 5.3 Security Restrictions
 You must not:
@@ -101,7 +103,11 @@ Reverse-engineer, decompile, or disassemble the Service;
 Interfere with Service availability (e.g., DDoS attacks, resource overconsumption).
 
 5.4 Risk Acceptance
-By using the Service, you acknowledge and accept that malware analysis involves inherent risks, including but not limited to unintended execution, propagation, or system damage. You assume full responsibility for any consequences arising from the analysis of Uploaded Files.
+By using the Service, you acknowledge and accept that:
+
+Malware analysis involves inherent risks, including unintended execution, propagation, or system damage;
+
+The Operator does not employ safeguards to protect Personal Data. Uploaded Files are processed at your sole risk.
 
 6. DISCLAIMER OF WARRANTIES
 TO THE FULLEST EXTENT PERMITTED BY UK LAW, THE OPERATOR EXPLICITLY DISCLAIMS ALL WARRANTIES, INCLUDING:
@@ -112,7 +118,9 @@ Containment: No guarantee that malware will be isolated or rendered harmless;
 
 Accuracy: Analysis Results may be incomplete, erroneous, or misleading;
 
-Availability: Service may be interrupted, suspended, or terminated without notice.
+Availability: Service may be interrupted, suspended, or terminated without notice;
+
+Data Security: The Operator does not guarantee the security of Uploaded Files, Analysis Results, or logs. The Service is not designed to comply with data protection standards for Personal Data.
 
 No system is impenetrable. The Operator disclaims liability for breaches caused by vulnerabilities not reasonably foreseeable at the time of service delivery.
 
@@ -124,7 +132,7 @@ Direct Damages: Data loss, profit loss, business interruption;
 
 Indirect Damages: Reputational harm, legal fees, third-party claims;
 
-Consequential Damages: Malware propagation, reliance on Analysis Results.
+Consequential Damages: Malware propagation, reliance on Analysis Results, or damages arising from hacking, data breaches, or unauthorized access to Uploaded Files.
 
 7.2 Liability Cap
 In jurisdictions where liability cannot be fully excluded, the Operator’s total liability shall not exceed £100.
@@ -139,7 +147,7 @@ Fraud or fraudulent misrepresentation;
 Statutory consumer rights under the Consumer Rights Act 2015.
 
 7.4 Unauthorized Data Uploads
-The Operator assumes no liability for User-uploaded Personal Data, EXIF metadata, or GPS coordinates, even if such data is processed inadvertently. Users agree to indemnify the Operator for all damages, fines, or legal claims arising from prohibited uploads.
+The Operator assumes no liability for User-uploaded Personal Data, EXIF metadata, or GPS coordinates, even if such data is processed inadvertently. Users agree to indemnify the Operator for all damages, fines, or legal claims arising from prohibited uploads, including GDPR-related penalties.
 
 8. INDEMNIFICATION
 You agree to defend, indemnify, and hold harmless the Operator, its affiliates, and agents from:
@@ -148,7 +156,7 @@ Claims arising from your breach of this Agreement;
 
 Costs (including reasonable attorneys’ fees, expert witness fees);
 
-Third-party disputes over Uploaded Files or Analysis Results.
+Third-party disputes over Uploaded Files or Analysis Results, including claims related to Personal Data exposure or GDPR violations.
 
 Your indemnification obligations exclude liabilities arising from the Operator’s gross negligence or willful misconduct.
 
@@ -165,11 +173,11 @@ Legal compliance (e.g., warrants, subpoenas);
 
 Service optimization.
 
-All retained logs are stripped of Personal Data and EXIF metadata.
+All retained logs are stripped of Personal Data and EXIF metadata. The Operator does not retain identifiable information.
 
 10. SECURITY MEASURES
 10.1 Isolation
-Uploaded Files processed in ephemeral Docker containers with no internet access.
+Uploaded Files are processed in ephemeral Docker containers with no internet access.
 
 10.2 Prohibited Data Filtering
 The Service employs automated tools to scan for and block files containing:
@@ -179,6 +187,9 @@ Common Personal Data patterns (e.g., email addresses, phone numbers);
 EXIF metadata fields indicating GPS coordinates or device identifiers.
 
 No guarantees are made about the effectiveness of these filters. Users remain solely responsible for compliance.
+
+10.3 No Safeguards
+The Operator does not implement security measures to protect Personal Data. Users acknowledge that Uploaded Files are processed in an environment not designed for sensitive data handling.
 
 11. TERMINATION
 The Operator reserves the right to:
@@ -217,9 +228,9 @@ Postal Address: Available upon request for legal inquiries.
 Response Time: 30 business days for non-urgent matters.
 
 17. ANNEXES
-Privacy Policy: [Link]
+Privacy Policy: [Link] (Revised to exclude GDPR obligations)
 
-Acceptable Use Policy: [Link]
+Acceptable Use Policy: [Link] (Explicitly prohibits Personal Data/EXIF uploads)
 
 18. PROHIBITED DATA ACKNOWLEDGEMENT
 18.1 User Certification
@@ -230,7 +241,7 @@ No Personal Data or EXIF metadata (e.g., GPS coordinates) is included;
 You have scrubbed all identifiable information using third-party tools.
 
 18.2 No Remediation
-The Operator will not attempt to remove, anonymize, or remediate Personal Data in uploaded files. Violations will result in data deletion and account termination.
+The Operator will not attempt to remove, anonymize, or remediate Personal Data in uploaded files. Violations will result in immediate data deletion and account termination.
 
 FORCE MAJEURE
 The Operator is not liable for failures due to events beyond reasonable control (e.g., natural disasters, cyberattacks, government restrictions).
@@ -240,10 +251,8 @@ BY USING THE SERVICE, YOU IRREVOCABLY AGREE THAT:
 
 YOU WILL NOT UPLOAD PERSONAL DATA OR FILES WITH GPS COORDINATES/EXIF METADATA;
 
-THE OPERATOR BEARS NO LIABILITY FOR UNAUTHORIZED DATA UPLOADS;
+THE OPERATOR BEARS NO LIABILITY FOR UNAUTHORIZED DATA UPLOADS, DATA BREACHES, OR HACKING INCIDENTS;
 
 VIOLATIONS MAY RESULT IN LEGAL ACTION AND TERMINATION OF ACCESS.
 
 IF YOU DO NOT AGREE, DISCONTINUE USE IMMEDIATELY.
-
-Note: This document removes GDPR references, emphasizes prohibitions on personal data/EXIF uploads, and strengthens liability protections. Ensure technical measures (e.g., EXIF scrubbing tools) align with these terms.
