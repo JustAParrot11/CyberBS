@@ -521,27 +521,30 @@
         }
 
         .image-box {
-            position: relative;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            aspect-ratio: 1/1;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            transform: translateY(100px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    display: flex; /* Ensure the image fills the box */
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+}
 
         .image-box.animate {
             animation: slideIn 0.8s ease-out forwards, scaleUp 0.8s ease-out forwards;
         }
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
+.image-box img {
+    width: 100%; /* Ensure the image takes up the full width */
+    height: 100%; /* Ensure the image takes up the full height */
+    object-fit: cover; /* Ensure the image covers the entire box */
+    transition: transform 0.4s ease;
+}
 
         .box-content {
             position: absolute;
