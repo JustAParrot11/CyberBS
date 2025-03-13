@@ -4,6 +4,22 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; 
+                   style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; 
+                   img-src 'self' data:;
+                   connect-src 'self';
+                   font-src 'self' cdnjs.cloudflare.com;
+                   frame-src 'none';
+                   object-src 'none';
+                   base-uri 'none';">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), usb=()">
+    <meta http-equiv="Cache-Control" content="no-store, max-age=0">
+    <meta http-equiv="Set-Cookie" 
+          content="name=value; Secure; HttpOnly; SameSite=Strict; Path=/">
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta name="description" content="CyberBS | Cybersecurity. Discover tools, scans, and resources - Your go-to library for all things cybersecurity.">
@@ -12,7 +28,7 @@
 
     <link rel="stylesheet" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" 
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer">
 
@@ -716,7 +732,7 @@
             <div class="nav-item">
                 File Check
                 <div class="dropdown">
-                    <a href="pages/File-Virus-Scan.html" class="dropdown-item" style="text-decoration: none; display: block;">File Virus Check</a>
+                    <a href="pages/File-Virus-Scan.html" class="dropdown-item" style="text-decoration: none; display: block;" rel="noopener noreferrer">File Virus Check</a>
                     <div class="dropdown-item">File Data Viewer</div>
                     <div class="dropdown-item">File EXIF Extractor</div>
                 </div>
@@ -737,7 +753,7 @@
         <div class="hero-content">
             <h1>Cybersecurity Insights, Knowledge at Your Fingertips</h1>
             <p>Discover tools, scans, and resources - Your go-to library for all things cybersecurity.</p>
-            <a href="pages/File-Virus-Scan.html" class="cta-button">Scan Files Now</a>
+            <a href="pages/File-Virus-Scan.html" class="cta-button" aria-label="Scan files for viruses">Scan Files Now</a>
         </div>
     </section>
 
@@ -758,7 +774,7 @@
                         alt="Slide 1"
                         loading="lazy">
                     <div class="carousel-text">
-                        <a href="https://www.virustotal.com" target="_blank">
+                        <a href="https://www.virustotal.com" target="_blank" rel="noopener noreferrer">
                             <h3>VirusTotal</h3>
                         </a>
                         <p>VirusTotal is a free online security platform that scans files, URLs, and IPs with multiple antivirus engines, detecting malware, viruses, and cyber threats to enhance digital safety.</p>
@@ -775,7 +791,7 @@
                         alt="Slide 2"
                         loading="lazy">
                     <div class="carousel-text">
-                        <a href="https://app.any.run" target="_blank">
+                        <a href="https://app.any.run" target="_blank" rel="noopener noreferrer">
                             <h3>ANY.RUN</h3>
                         </a>
                         <p>ANY.RUN is an interactive malware analysis sandbox that allows users to safely analyze and investigate malicious files and URLs in a virtualized environment in real time.</p>
@@ -792,7 +808,7 @@
                         alt="Slide 3"
                         loading="lazy">
                     <div class="carousel-text">
-                        <a href="https://attack.mitre.org/" target="_blank">
+                        <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer">
                             <h3>MITRE ATT&CK Framework</h3>
                         </a>
                         <p>The MITRE ATT&CK framework is a globally accessible knowledge base of cyber adversary tactics, techniques, and procedures (TTPs), helping organizations detect, prevent, and respond to security threats effectively.</p>
@@ -809,7 +825,7 @@
                         alt="Slide 4"
                         loading="lazy">
                     <div class="carousel-text">
-                        <a href="https://msrc.microsoft.com/update-guide/vulnerability" target="_blank">
+                        <a href="https://msrc.microsoft.com/update-guide/vulnerability" target="_blank" rel="noopener noreferrer">
                             <h3>Microsoft Security Response Center</h3>
                         </a>
                         <p>The Microsoft Security Response Center (MSRC) identifies and addresses vulnerabilities in Microsoft products. By assigning CVE identifiers to security flaws, MSRC helps prioritize, track, and release patches.</p>
@@ -826,7 +842,7 @@
                         alt="Slide 5"
                         loading="lazy">
                     <div class="carousel-text">
-                        <a href="https://urlscan.io/" target="_blank">
+                        <a href="https://urlscan.io/" target="_blank" rel="noopener noreferrer">
                             <h3>URLscan.io</h3>
                         </a>
                         <p>URLscan.io is a web scanning service that analyzes and provides detailed information about websites, including security risks, domain reputation, and traffic data.</p>
@@ -865,7 +881,7 @@
             </div>
         </div>
         <div class="stats-source">
-            <p>Statistics by <a href="https://www.sentinelone.com/" target="_blank">SentinelOne</a></p>
+            <p>Statistics by <a href="https://www.sentinelone.com/" target="_blank" rel="noopener noreferrer">SentinelOne</a></p>
         </div>
     </section>
 
@@ -876,7 +892,7 @@
         
         <div class="boxes-container">
             <div class="image-box">
-                <a href="www.example1.com" style="text-decoration: none; display: block;">
+                <a href="https://www.example1.com" style="text-decoration: none; display: block;" rel="noopener noreferrer">
                     <img 
                         srcset="images/mitre-attack-scripts-400.jpg 400w,
                                 images/mitre-attack-scripts-800.jpg 800w,
@@ -893,7 +909,7 @@
             </div>
 
             <div class="image-box">
-                <a href="www.example2.com" style="text-decoration: none; display: block;">
+                <a href="https://www.example2.com" style="text-decoration: none; display: block;" rel="noopener noreferrer">
                     <img 
                         srcset="images/mitre-defend-landing-400.jpg 400w,
                                 images/mitre-defend-landing-800.jpg 800w,
@@ -910,7 +926,7 @@
             </div>
 
             <div class="image-box">
-                <a href="www.example3.com" style="text-decoration: none; display: block;">
+                <a href="https://www.example3.com" style="text-decoration: none; display: block;" rel="noopener noreferrer">
                     <img 
                         srcset="images/computer-virus-400.jpg 400w,
                                 images/computer-virus-800.jpg 800w,
@@ -927,7 +943,7 @@
             </div>
 
             <div class="image-box">
-                <a href="www.example4.com" style="text-decoration: none; display: block;">
+                <a href="https://www.example4.com" style="text-decoration: none; display: block;" rel="noopener noreferrer">
                     <img 
                         srcset="images/file-data-400.jpg 400w,
                                 images/file-data-800.jpg 800w,
@@ -944,7 +960,7 @@
             </div>
 
             <div class="image-box">
-                <a href="www.example5.com" style="text-decoration: none; display: block;">
+                <a href="https://www.example5.com" style="text-decoration: none; display: block;" rel="noopener noreferrer">
                     <img 
                         srcset="images/cyber-remediation-400.jpg 400w,
                                 images/cyber-remediation-800.jpg 800w,
@@ -961,7 +977,7 @@
             </div>
 
             <div class="image-box">
-                <a href="www.example6.com" style="text-decoration: none; display: block;">
+                <a href="https://www.example6.com" style="text-decoration: none; display: block;" rel="noopener noreferrer">
                     <img 
                         srcset="images/url-scan-400.jpg 400w,
                                 images/url-scan-800.jpg 800w,
@@ -1124,9 +1140,13 @@
         const hamburger = document.querySelector('.hamburger');
         const navGroup = document.querySelector('.nav-group');
 
-        hamburger.addEventListener('click', () => {
-            navGroup.classList.toggle('active');
-        });
+        try {
+            hamburger.addEventListener('click', () => {
+                navGroup.classList.toggle('active');
+            });
+        } catch (error) {
+            console.error('Hamburger menu error:', error);
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
             const carouselSection = document.querySelector('.carousel-section');
