@@ -494,7 +494,6 @@
             color: var(--stellar-gray);
         }
 
-        /* New Image Boxes Section Styles */
         .image-boxes {
             padding: 4rem clamp(5%, 10vw, 10%);
             background: var(--event-horizon);
@@ -517,6 +516,13 @@
             aspect-ratio: 1/1;
             border: 1px solid rgba(100, 255, 218, 0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .image-box.animate {
+            animation: slideIn 0.8s ease-out forwards, scaleUp 0.8s ease-out forwards;
         }
 
         .image-box img {
@@ -534,12 +540,7 @@
             width: 60%;
             padding: 1.5rem;
             background: rgba(10, 25, 47, 0.9);
-            clip-path: inset(0% 0% 0% 100%);
-            transition: clip-path 0.4s ease;
             backdrop-filter: blur(4px);
-        }
-
-        .image-box:hover .box-content {
             clip-path: inset(0% 0% 0% 0%);
         }
 
@@ -558,6 +559,35 @@
             font-size: clamp(0.9rem, 1.2vw, 1rem);
             line-height: 1.4;
         }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .image-box:nth-child(1) { animation-delay: 0.1s; }
+        .image-box:nth-child(2) { animation-delay: 0.2s; }
+        .image-box:nth-child(3) { animation-delay: 0.3s; }
+        .image-box:nth-child(4) { animation-delay: 0.4s; }
+        .image-box:nth-child(5) { animation-delay: 0.5s; }
+        .image-box:nth-child(6) { animation-delay: 0.6s; }
 
         @media (max-width: 768px) {
             .boxes-container {
@@ -835,7 +865,6 @@
         </div>
     </section>
 
-    <!-- New Image Boxes Section -->
     <section class="image-boxes">
         <div class="carousel-heading">
             <h1>Core Cybersecurity Domains</h1>
@@ -843,51 +872,105 @@
         
         <div class="boxes-container">
             <div class="image-box">
-                <img src="images/network-security.jpg" alt="Network Security" loading="lazy">
-                <div class="box-content">
-                    <h3>Network Security</h3>
-                    <p>Protecting infrastructure from unauthorized access, misuse, or theft through layered defenses.</p>
-                </div>
+                <a href="www.example1.com" style="text-decoration: none; display: block;">
+                    <img 
+                        srcset="images/network-security-400.jpg 400w,
+                                images/network-security-800.jpg 800w,
+                                images/network-security-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/network-security-800.jpg" 
+                        alt="Network Security" 
+                        loading="lazy">
+                    <div class="box-content">
+                        <h3>Network Security</h3>
+                        <p>Protecting infrastructure from unauthorized access, misuse, or theft through layered defenses.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="image-box">
-                <img src="images/cloud-security.jpg" alt="Cloud Security" loading="lazy">
-                <div class="box-content">
-                    <h3>Cloud Security</h3>
-                    <p>Safeguarding cloud-based systems and data through advanced encryption and access controls.</p>
-                </div>
+                <a href="www.example2.com" style="text-decoration: none; display: block;">
+                    <img 
+                        srcset="images/cloud-security-400.jpg 400w,
+                                images/cloud-security-800.jpg 800w,
+                                images/cloud-security-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/cloud-security-800.jpg" 
+                        alt="Cloud Security" 
+                        loading="lazy">
+                    <div class="box-content">
+                        <h3>Cloud Security</h3>
+                        <p>Safeguarding cloud-based systems and data through advanced encryption and access controls.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="image-box">
-                <img src="images/endpoint-security.jpg" alt="Endpoint Protection" loading="lazy">
-                <div class="box-content">
-                    <h3>Endpoint Protection</h3>
-                    <p>Securing devices and workstations against malware, ransomware, and zero-day threats.</p>
-                </div>
+                <a href="www.example3.com" style="text-decoration: none; display: block;">
+                    <img 
+                        srcset="images/endpoint-security-400.jpg 400w,
+                                images/endpoint-security-800.jpg 800w,
+                                images/endpoint-security-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/endpoint-security-800.jpg" 
+                        alt="Endpoint Protection" 
+                        loading="lazy">
+                    <div class="box-content">
+                        <h3>Endpoint Protection</h3>
+                        <p>Securing devices and workstations against malware, ransomware, and zero-day threats.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="image-box">
-                <img src="images/identity-management.jpg" alt="Identity Management" loading="lazy">
-                <div class="box-content">
-                    <h3>Identity Management</h3>
-                    <p>Implementing multi-factor authentication and privileged access management systems.</p>
-                </div>
+                <a href="www.example4.com" style="text-decoration: none; display: block;">
+                    <img 
+                        srcset="images/identity-management-400.jpg 400w,
+                                images/identity-management-800.jpg 800w,
+                                images/identity-management-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/identity-management-800.jpg" 
+                        alt="Identity Management" 
+                        loading="lazy">
+                    <div class="box-content">
+                        <h3>Identity Management</h3>
+                        <p>Implementing multi-factor authentication and privileged access management systems.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="image-box">
-                <img src="images/data-protection.jpg" alt="Data Security" loading="lazy">
-                <div class="box-content">
-                    <h3>Data Security</h3>
-                    <p>Encrypting sensitive information and maintaining data integrity across all systems.</p>
-                </div>
+                <a href="www.example5.com" style="text-decoration: none; display: block;">
+                    <img 
+                        srcset="images/data-protection-400.jpg 400w,
+                                images/data-protection-800.jpg 800w,
+                                images/data-protection-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/data-protection-800.jpg" 
+                        alt="Data Security" 
+                        loading="lazy">
+                    <div class="box-content">
+                        <h3>Data Security</h3>
+                        <p>Encrypting sensitive information and maintaining data integrity across all systems.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="image-box">
-                <img src="images/incident-response.jpg" alt="Incident Response" loading="lazy">
-                <div class="box-content">
-                    <h3>Incident Response</h3>
-                    <p>Developing strategies for detection, analysis, and containment of security breaches.</p>
-                </div>
+                <a href="www.example6.com" style="text-decoration: none; display: block;">
+                    <img 
+                        srcset="images/incident-response-400.jpg 400w,
+                                images/incident-response-800.jpg 800w,
+                                images/incident-response-1200.jpg 1200w"
+                        sizes="(max-width: 768px) 100vw, 80vw"
+                        src="images/incident-response-800.jpg" 
+                        alt="Incident Response" 
+                        loading="lazy">
+                    <div class="box-content">
+                        <h3>Incident Response</h3>
+                        <p>Developing strategies for detection, analysis, and containment of security breaches.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1123,6 +1206,23 @@
 
         document.querySelectorAll('.fact-number').forEach(number => {
             numberObserver.observe(number);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageBoxes = document.querySelectorAll('.image-box');
+
+            const imageBoxObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            imageBoxes.forEach(box => {
+                imageBoxObserver.observe(box);
+            });
         });
 
         startAutoSlide();
