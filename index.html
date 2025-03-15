@@ -494,10 +494,7 @@
     .image-box:nth-child(4) { animation-delay: 0.4s; }
     .image-box:nth-child(5) { animation-delay: 0.5s; }
     .image-box:nth-child(6) { animation-delay: 0.6s; }
-    @media (max-width: 768px) {
-      .boxes-container { grid-template-columns: 1fr; gap: 1.5rem; }
-      .box-content { width: 70%; padding: 1rem; }
-    }
+    @media (max-width: 768px) { .boxes-container { grid-template-columns: 1fr; gap: 1.5rem; } .box-content { width: 70%; padding: 1rem; } }
     @media (max-width: 1920px) { nav { padding: 1rem 4%; } }
     @media (max-width: 1440px) { nav { padding: 0.75rem 3%; } }
     @media (max-width: 1024px) {
@@ -545,11 +542,18 @@
       cursor: pointer;
       padding: 0;
       margin: 0;
-      text-decoration: underline;
+      text-decoration: none;
       opacity: 0.5;
       transition: opacity 0.3s ease;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .hidden-button:hover { opacity: 1; color: var(--quantum-teal); }
+    .hidden-button:hover { 
+      opacity: 1; 
+      color: var(--quantum-teal);
+      text-decoration: none;
+      outline: none;
+    }
     
     /* Container for the bottom left button */
     .bottom-button-container {
