@@ -12,7 +12,7 @@
   <meta http-equiv="Set-Cookie" content="name=value; Secure; HttpOnly; SameSite=Strict; Path=/">
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <meta name="description" content="CyberBS | Cybersecurity. Discover tools, scans, and resources - Your go-to library for all things cybersecurity.">
+  <meta name="description" content="CyberBS | Cybersecurity Redefined - About">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CyberBS | Cybersecurity Redefined - About</title>
 
@@ -29,6 +29,8 @@
       --nebula-blue: #1a3657;
       --stellar-gray: #8892b0;
       --event-horizon: #020c1b;
+      /* Assumed nav bar height */
+      --nav-height: 70px;
     }
     html {
       font-size: clamp(12px, 1.2vw, 16px);
@@ -55,17 +57,16 @@
       will-change: transform;
     }
     nav {
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       padding: clamp(0.75rem, 5%, 1.5rem);
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: rgba(10, 25, 47, 0.97);
       backdrop-filter: blur(12px);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
       z-index: 2;
     }
     .progress-bar {
@@ -203,48 +204,7 @@
       cursor: pointer;
       padding: 0.5rem;
     }
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding: calc(clamp(0.75rem, 5%, 1.5rem) * 2 + 2.5rem) clamp(5%, 10vw, 10%) 0;
-      position: relative;
-      flex-wrap: wrap;
-      margin-top: 4rem;
-    }
-    .hero-content {
-      max-width: min(50rem, 90%);
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: clamp(1.8rem, 3vw, 2.15rem);
-      color: var(--quantum-teal);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      font-weight: 600;
-      text-shadow: 0 0 1.875rem rgba(100, 255, 218, 0.2);
-    }
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--stellar-gray);
-      margin-bottom: 2.5rem;
-      max-width: 37.5rem;
-    }
-    .cta-button {
-      padding: 1rem 2rem;
-      background: transparent;
-      border: 0.0625rem solid var(--quantum-teal);
-      color: var(--quantum-teal);
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 48px;
-      min-height: 48px;
-    }
-    .cta-button:hover { background: rgba(100, 255, 218, 0.05); }
-
-    /* Media queries to match index.html scaling */
+    /* Media queries for nav on mobile */
     @media (max-width: 768px) {
       .nav-group {
         position: fixed;
@@ -266,21 +226,29 @@
         box-shadow: none;
         border: none;
       }
-      .hero { padding: 2rem 5% 0; min-height: auto; }
-      .hero-content { text-align: center; margin-bottom: 2rem; }
-      .cta-button { margin: 0 auto; }
     }
-    @media (max-width: 1920px) { 
-      nav { padding: 1rem 4%; } 
+    
+    /* Centered text box placed in document flow with reduced width */
+    .centered-box {
+      margin: calc(var(--nav-height) + 2rem) auto 2rem auto;
+      padding: 1rem 2rem;
+      background: rgba(10, 25, 47, 0.95);
+      border: 1px solid var(--quantum-teal);
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      font-weight: bold;
+      width: 90vw;
+      max-width: 600px;
+      color: var(--stellar-gray);
+      text-align: center;
+      box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
     }
-    @media (max-width: 1440px) { 
-      nav { padding: 0.75rem 3%; } 
-    }
-    @media (max-width: 1024px) {
-      .hero { padding-top: 4rem; min-height: auto; }
-    }
-    @media (max-width: 480px) { 
-      .hero { padding-top: 1rem; } 
+    /* Mobile adjustments for the centered box */
+    @media (max-width: 768px) {
+      .centered-box {
+        padding: 0.75rem 1rem;
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        margin: calc(var(--nav-height) + 1rem) auto 1rem auto;
+      }
     }
   </style>
 </head>
@@ -327,20 +295,15 @@
     </div>
     <div class="progress-bar"></div>
   </nav>
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Cybersecurity Insights, Knowledge at Your Fingertips</h1>
-      <p>Discover tools, scans, and resources - Your go-to library for all things cybersecurity.</p>
-      <a href="/pages/File-Virus-Scan.html" class="cta-button" aria-label="Scan files for viruses">Scan Files Now</a>
-    </div>
-  </section>
   
-  <!-- About content -->
-  <section class="about-content" style="padding: 2rem clamp(5%, 10vw, 10%); max-width: 800px; margin: auto;">
-    <h2>About CyberBS</h2>
-    <p>CyberBS is dedicated to providing cybersecurity insights, tools, and resources to help you stay protected in an ever-evolving digital landscape. Our mission is to make cybersecurity accessible and understandable for everyone.</p>
-  </section>
-
+  <!-- Centered text box with static bold text split into two paragraphs -->
+  <div class="centered-box">
+    <p>
+      CyberBS is a comprehensive cybersecurity platform offering a wide range of tools, scans, and resources to help users navigate the complex world of digital security. The website features an engaging interface with interactive sections, including detailed insights on the latest cyber threats, vulnerabilities, and security statistics. Users can explore various cybersecurity frameworks such as MITRE ATT&CK and MITRE D3FEND, along with practical utilities like file virus scans, URL checks, and file data viewers. The dynamic carousel presents trusted external tools like VirusTotal and ANY.RUN to enhance threat analysis. Additionally, the platform offers real-time security metrics, highlighting data breach losses and cybercrime impacts, while delivering an informative, user-friendly experience. Designed with modern aesthetics and responsive features, CyberBS empowers individuals and organizations to improve their cyber defenses through accessible, actionable intelligence and innovative remediation solutions. Explore CyberBS today to discover robust security strategies, gain expert insights, and fortify your digital presence effectively.
+    </p>
+    <p style="font-weight: bold !important;">Contact us at: <span class="email-animate" style="color: var(--quantum-teal) !important;" data-text="cyberbsinfo@gmail.com"></span></p>
+  </div>
+  
   <script>
     // Canvas animation for network nodes (math background)
     const canvas = document.getElementById('networkCanvas');
@@ -412,16 +375,23 @@
       resizeTimeout = setTimeout(() => { setCanvasSize(); createNodes(); }, 200);
     });
     animate();
-
-    // Progress bar update on scroll
-    document.addEventListener('DOMContentLoaded', () => {
-      const progressBar = document.querySelector('.progress-bar');
-      window.addEventListener('scroll', () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollProgress = (scrollTop / scrollHeight) * 100;
-        progressBar.style.width = `${scrollProgress}%`;
-      });
+  </script>
+  
+  <script>
+    // Typewriter animation for the email address only
+    document.addEventListener("DOMContentLoaded", function() {
+      const emailSpan = document.querySelector('.email-animate');
+      const fullText = emailSpan.getAttribute('data-text');
+      emailSpan.textContent = "";
+      let index = 0;
+      function typeEmail() {
+        if (index < fullText.length) {
+          emailSpan.textContent += fullText.charAt(index);
+          index++;
+          setTimeout(typeEmail, 100); // Adjust delay as desired
+        }
+      }
+      typeEmail();
     });
   </script>
 </body>
