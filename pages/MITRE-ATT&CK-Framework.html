@@ -150,7 +150,7 @@
       color: inherit;
       text-decoration: none;
     }
-    /* Ensure the dropdowns match the index.html styling */
+    /* Dropdown styling */
     .nav-item .dropdown-item {
       position: relative;
       display: block;
@@ -439,7 +439,7 @@
     </div>
   </section>
   
-  <!-- Reconnaissance Section -->
+  <!-- Reconnaissance Section (Full) -->
   <section id="section-reconnaissance" style="padding: 2rem; max-width: 800px; margin: auto; text-align: left;">
     <h2 style="color: var(--quantum-teal); margin-bottom: 1rem;">Reconnaissance</h2>
     <p style="color: var(--stellar-gray); margin-bottom: 1.5rem;">
@@ -449,7 +449,7 @@
     <!-- Reconnaissance Script Area -->
     <section class="recon-script-area">
       <h3>Script for All Reconnaissance Techniques</h3>
-      <p>This script can be used to display the majority of commonly used reconnaissance techniques. For specifics techniques see below.</p>
+      <p>This script can be used to display the majority of commonly used reconnaissance techniques. For specific techniques see below.</p>
       <details>
         <summary style="cursor: pointer; font-weight: bold; margin-bottom: 1rem;">Show Script</summary>
         <pre>
@@ -462,13 +462,12 @@ function reconnaissanceScript() {
       </details>
     </section>
     
-    <!-- Modified Active Scanning Dropdown with Sub-Dropdowns -->
+    <!-- Active Scanning -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Active Scanning - T1595</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Techniques include ping sweeps, port scanning, and banner grabbing to map out network structures and detect live hosts.
       </p>
-      
       <!-- Sub-dropdown for Scanning IP Blocks -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Scanning IP Blocks - T1595.001</summary>
@@ -481,7 +480,6 @@ console.log("Scanning IP Blocks snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Sub-dropdown for Vulnerability Scanning -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Vulnerability Scanning - T1595.002</summary>
@@ -490,11 +488,10 @@ console.log("Scanning IP Blocks snippet");
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
           <pre>
 // Code block for Vulnerability Scanning
-console.log("Test Vulnerability Scanning snippet");
+console.log("Vulnerability Scanning snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Sub-dropdown for Wordlist Scanning -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Wordlist Scanning - T1595.003</summary>
@@ -515,7 +512,6 @@ console.log("Wordlist Scanning snippet");
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         This phase involves collecting detailed information about the victim's host including its hardware, software, firmware, and client configurations.
       </p>
-      
       <!-- Hardware -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Hardware - T1592.001</summary>
@@ -528,7 +524,6 @@ console.log("Gathering Hardware information snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Software -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Software - T1592.002</summary>
@@ -541,7 +536,6 @@ console.log("Gathering Software information snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Firmware -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Firmware - T1592.003</summary>
@@ -554,7 +548,6 @@ console.log("Gathering Firmware information snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Client Configurations -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Client Configurations - T1592.004</summary>
@@ -575,7 +568,6 @@ console.log("Gathering Client Configurations snippet");
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         This phase focuses on collecting identity-related details such as credentials, email addresses, and employee names to build a profile of the target.
       </p>
-      
       <!-- Credentials -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Credentials - T1589.001</summary>
@@ -588,7 +580,6 @@ console.log("Gathering Credentials snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Email Addresses -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Email Addresses - T1589.002</summary>
@@ -601,7 +592,6 @@ console.log("Gathering Email Addresses snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Employee Names -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Employee Names - T1589.003</summary>
@@ -616,13 +606,12 @@ console.log("Gathering Employee Names snippet");
       </details>
     </details>
     
-    <!-- Gather Victim Network Information Section -->
+    <!-- Gather Victim Network Information -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gather Victim Network Information - T1590</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Collect network-related details such as IP addresses, Active Directory mappings, and network device inventories.
       </p>
-      
       <!-- Domain Properties -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Domain Properties - T1590.001</summary>
@@ -635,7 +624,6 @@ console.log("Domain Properties snippet");
           </pre>
         </details>
       </details>
-      
       <!-- DNS -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">DNS - T1590.002</summary>
@@ -648,7 +636,6 @@ console.log("DNS mapping snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Network Trust Dependencies -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Network Trust Dependencies - T1590.003</summary>
@@ -661,7 +648,6 @@ console.log("Network Trust Dependencies snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Network Topology -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Network Topology - T1590.004</summary>
@@ -674,7 +660,6 @@ console.log("Network Topology snippet");
           </pre>
         </details>
       </details>
-      
       <!-- IP Addresses -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">IP Addresses - T1590.005</summary>
@@ -687,7 +672,6 @@ console.log("IP Addresses snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Network Security Appliances -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Network Security Appliances - T1590.006</summary>
@@ -708,7 +692,6 @@ console.log("Network Security Appliances snippet");
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Collecting organization details such as name, location, size, and type.
       </p>
-      
       <!-- Determine Physical Locations -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Determine Physical Locations - T1591.001</summary>
@@ -721,7 +704,6 @@ console.log("Gathering Organization Name snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Business Relationships -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Business Relationships - T1591.002</summary>
@@ -734,7 +716,6 @@ console.log("Gathering Organization Location snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Identify Business Tempo -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Identify Business Tempo - T1591.003</summary>
@@ -747,7 +728,6 @@ console.log("Gathering Organization Size snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Identify Roles -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Identify Roles - T1591.004</summary>
@@ -762,13 +742,12 @@ console.log("Gathering Organization Type snippet");
       </details>
     </details>
     
-    <!-- Phishing for Information Section -->
+    <!-- Phishing for Information -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Phishing for Information - T1598</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Techniques targeting users to extract sensitive data via deceptive communications.
       </p>
-      
       <!-- Spear Phishing -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Service - T1598.001</summary>
@@ -781,7 +760,6 @@ console.log("Spear Phishing snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Whaling -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Attachment - T1598.002</summary>
@@ -794,7 +772,6 @@ console.log("Whaling snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Clone Phishing -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Link - T1598.003</summary>
@@ -807,7 +784,6 @@ console.log("Clone Phishing snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Vishing -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Voice - T1598.004</summary>
@@ -822,16 +798,15 @@ console.log("Vishing snippet");
       </details>
     </details>
     
-    <!-- Search Closed Sources Section -->
+    <!-- Search Closed Sources -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Closed Sources - T1597</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Accessing non-public databases and internal document repositories.
       </p>
-      
       <!-- Threat Intel Vendors -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Threat Intel Vendors - T1597.001</summary>
+        <summary style="cursor: pointer; font-weight: bold;">Threat Intel Vendors - T1597.001</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Query internal or subscription-based databases.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -841,10 +816,9 @@ console.log("Private Database query snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Purchase Technical Data -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Purchase Technical Data - T1597.002</summary>
+        <summary style="cursor: pointer; font-weight: bold;">Purchase Technical Data - T1597.002</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Search through company archives and secured documents.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -856,16 +830,15 @@ console.log("Internal Repositories query snippet");
       </details>
     </details>
     
-    <!-- Search Open Technical Databases Section -->
+    <!-- Search Open Technical Databases -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Open Technical Databases - T1596</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Query open-source technical databases for publicly available network and vulnerability data.
       </p>
-      
       <!-- DNS/Passive DNS -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">DNS/Passive DNS - T1596.001</summary>
+        <summary style="cursor: pointer; font-weight: bold;">DNS/Passive DNS - T1596.001</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Search the Shodan database for exposed devices and services.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -875,10 +848,9 @@ console.log("Shodan query snippet");
           </pre>
         </details>
       </details>
-      
       <!-- WHOIS -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">WHOIS - T1596.002</summary>
+        <summary style="cursor: pointer; font-weight: bold;">WHOIS - T1596.002</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Utilize Censys for detailed internet-wide scanning information.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -888,10 +860,9 @@ console.log("Censys query snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Digital Certificates -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Digital Cetificates - T1596.003</summary>
+        <summary style="cursor: pointer; font-weight: bold;">Digital Certificates - T1596.003</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Leverage ZoomEye to find network devices and vulnerabilities.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -901,10 +872,9 @@ console.log("ZoomEye query snippet");
           </pre>
         </details>
       </details>
-      
       <!-- CDNs -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">CDNs - T1596.004</summary>
+        <summary style="cursor: pointer; font-weight: bold;">CDNs - T1596.004</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Access BinaryEdge data for insights into exposed infrastructure.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -914,10 +884,9 @@ console.log("BinaryEdge query snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Scan Databases -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
-        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Scan Databases - T1596.005</summary>
+        <summary style="cursor: pointer; font-weight: bold;">Scan Databases - T1596.005</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Gather threat intelligence from RiskIQ's open data sources.</p>
         <details style="margin-top: 0.5rem;">
           <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
@@ -929,14 +898,13 @@ console.log("RiskIQ query snippet");
       </details>
     </details>
     
-    <!-- Search Open Websites/Domains Section -->
+    <!-- Search Open Websites/Domains -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Open Websites/Domains - T1593</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Look up public website data, domain history, and subdomain information.
       </p>
-      
-      <!-- WHOIS Lookup -->
+      <!-- Social Media -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Social Media - T1593.001</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Perform WHOIS lookups for registration details.</p>
@@ -948,7 +916,6 @@ console.log("WHOIS lookup snippet");
           </pre>
         </details>
       </details>
-      
       <!-- Domain History -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Engines - T1593.002</summary>
@@ -961,8 +928,7 @@ console.log("Domain History snippet");
           </pre>
         </details>
       </details>
-      
-      <!-- Subdomain Enumeration -->
+      <!-- Code Repositories -->
       <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
         <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Code Repositories - T1593.003</summary>
         <p style="color: var(--stellar-gray); margin-top: 0.5rem;">List and analyze subdomains for the target.</p>
@@ -976,7 +942,7 @@ console.log("Subdomain Enumeration snippet");
       </details>
     </details>
     
-    <!-- Search Victim-Owned Websites Section -->
+    <!-- Search Victim-Owned Websites -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
       <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Victim-Owned Websites - T1594</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
@@ -990,7 +956,242 @@ console.log("Victim-Owned Websites search snippet");
         </pre>
       </details>
     </details>
+  </section>
+  
+  <!-- Resource Development Section -->
+  <section id="section-resource-development" style="padding: 2rem; max-width: 800px; margin: auto; text-align: left;">
+    <h2 style="color: var(--quantum-teal); margin-bottom: 1rem;">Resource Development</h2>
+    <hr style="border: 1px solid var(--quantum-teal); margin: 1rem 0;">
+    <p style="color: var(--stellar-gray); margin-bottom: 1.5rem;">
+      This section covers the phases of resource development, outlining the methods attackers use to prepare and build their resources.
+    </p>
     
+    <!-- Resource Development Script Area -->
+    <section class="recon-script-area">
+      <h3>Script for All Resource Development Techniques</h3>
+      <p>This script can be used to display the majority of commonly used resource development techniques. For specific techniques see below.</p>
+      <details>
+        <summary style="cursor: pointer; font-weight: bold; margin-bottom: 1rem;">Show Script</summary>
+        <pre>
+// Resource Development script placeholder
+function resourceDevelopmentScript() {
+    // Implement resource development techniques here
+    console.log("Resource development in progress...");
+}
+        </pre>
+      </details>
+    </section>
+    
+    <!-- Acquire Access (no subdropdown) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Acquire Access</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Acquire Access.</p>
+    </details>
+    
+    <!-- Acquire Infrastructure (8 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Acquire Infrastructure</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Acquire Infrastructure.</p>
+      <!-- 8 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 4</summary>
+        <p>Description for sub-item 4.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 5</summary>
+        <p>Description for sub-item 5.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 6</summary>
+        <p>Description for sub-item 6.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 7</summary>
+        <p>Description for sub-item 7.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 8</summary>
+        <p>Description for sub-item 8.</p>
+      </details>
+    </details>
+    
+    <!-- Compromise Accounts (3 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Compromise Accounts</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Compromise Accounts.</p>
+      <!-- 3 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+    </details>
+    
+    <!-- Compromised Infrastructure (8 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Compromised Infrastructure</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Compromised Infrastructure.</p>
+      <!-- 8 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 4</summary>
+        <p>Description for sub-item 4.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 5</summary>
+        <p>Description for sub-item 5.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 6</summary>
+        <p>Description for sub-item 6.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 7</summary>
+        <p>Description for sub-item 7.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 8</summary>
+        <p>Description for sub-item 8.</p>
+      </details>
+    </details>
+    
+    <!-- Develop Capabilities (4 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Develop Capabilities</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Develop Capabilities.</p>
+      <!-- 4 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 4</summary>
+        <p>Description for sub-item 4.</p>
+      </details>
+    </details>
+    
+    <!-- Establish Accounts (3 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Establish Accounts</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Establish Accounts.</p>
+      <!-- 3 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+    </details>
+    
+    <!-- Obtain Capabilities (7 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Obtain Capabilities</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Obtain Capabilities.</p>
+      <!-- 7 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 4</summary>
+        <p>Description for sub-item 4.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 5</summary>
+        <p>Description for sub-item 5.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 6</summary>
+        <p>Description for sub-item 6.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 7</summary>
+        <p>Description for sub-item 7.</p>
+      </details>
+    </details>
+    
+    <!-- Stage Capabilities (6 sub dropdowns) -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Stage Capabilities</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Stage Capabilities.</p>
+      <!-- 6 Sub-dropdowns -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 1</summary>
+        <p>Description for sub-item 1.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 2</summary>
+        <p>Description for sub-item 2.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 3</summary>
+        <p>Description for sub-item 3.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 4</summary>
+        <p>Description for sub-item 4.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 5</summary>
+        <p>Description for sub-item 5.</p>
+      </details>
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Sub-item 6</summary>
+        <p>Description for sub-item 6.</p>
+      </details>
+    </details>
   </section>
   
   <!-- Bottom Button Container -->
