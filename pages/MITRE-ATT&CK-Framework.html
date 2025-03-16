@@ -278,6 +278,30 @@
       padding: 1rem 0;
       margin-top: 2rem;
     }
+    /* Reconnaissance script area styling */
+    .recon-script-area {
+      background: var(--nebula-blue);
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 2px solid var(--quantum-teal);
+      border-radius: 0.5rem;
+    }
+    .recon-script-area h3 {
+      color: var(--quantum-teal);
+      margin-bottom: 0.5rem;
+    }
+    .recon-script-area p {
+      color: var(--stellar-gray);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .recon-script-area pre {
+      background: #f5f5f5;
+      color: #333;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 0.5rem;
+    }
     .bottom-button-container {
       text-align: left;
       padding: 20px;
@@ -415,30 +439,558 @@
     </div>
   </section>
   
-  <!-- Example Content Section: Reconnaissance -->
+  <!-- Reconnaissance Section -->
   <section id="section-reconnaissance" style="padding: 2rem; max-width: 800px; margin: auto; text-align: left;">
     <h2 style="color: var(--quantum-teal); margin-bottom: 1rem;">Reconnaissance</h2>
     <p style="color: var(--stellar-gray); margin-bottom: 1.5rem;">
       This section covers the initial phase of cyber operations—reconnaissance. Here, attackers gather information and identify vulnerabilities before launching an attack.
     </p>
+    
+    <!-- Reconnaissance Script Area -->
+    <section class="recon-script-area">
+      <h3>Script for All Reconnaissance Techniques</h3>
+      <p>This script can be used to display the majority of commonly used reconnaissance techniques. For specifics techniques see below.</p>
+      <details>
+        <summary style="cursor: pointer; font-weight: bold; margin-bottom: 1rem;">Show Script</summary>
+        <pre>
+// Reconnaissance script placeholder
+function reconnaissanceScript() {
+    // Implement reconnaissance techniques here
+    console.log("Reconnaissance in progress...");
+}
+        </pre>
+      </details>
+    </section>
+    
+    <!-- Modified Active Scanning Dropdown with Sub-Dropdowns -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
-      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Active Scanning</summary>
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Active Scanning - T1595</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
         Techniques include ping sweeps, port scanning, and banner grabbing to map out network structures and detect live hosts.
       </p>
+      
+      <!-- Sub-dropdown for Scanning IP Blocks -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Scanning IP Blocks - T1595.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Scanning IP Blocks</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Scanning IP Blocks
+console.log("Scanning IP Blocks snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Sub-dropdown for Vulnerability Scanning -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Vulnerability Scanning - T1595.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Vulnerability Scanning.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Vulnerability Scanning
+console.log("Test Vulnerability Scanning snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Sub-dropdown for Wordlist Scanning -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Wordlist Scanning - T1595.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for Wordlist Scanning</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Wordlist Scanning
+console.log("Wordlist Scanning snippet");
+          </pre>
+        </details>
+      </details>
     </details>
+    
+    <!-- Gathering Victim Host Information -->
     <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
-      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gathering Victim Host Information</summary>
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gathering Victim Host Information - T1592</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
-        Involves gathering information from human sources through methods such as phishing and pretexting.
+        This phase involves collecting detailed information about the victim's host including its hardware, software, firmware, and client configurations.
       </p>
+      
+      <!-- Hardware -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Hardware - T1592.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for hardware enumeration and inventory.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Hardware enumeration
+console.log("Gathering Hardware information snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Software -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Software - T1592.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for software inventory and version detection.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Software inventory
+console.log("Gathering Software information snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Firmware -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Firmware - T1592.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for identifying firmware versions and potential vulnerabilities.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Firmware details
+console.log("Gathering Firmware information snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Client Configurations -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Client Configurations - T1592.004</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for gathering client configuration details such as network settings and installed services.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Client Configurations
+console.log("Gathering Client Configurations snippet");
+          </pre>
+        </details>
+      </details>
     </details>
-    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin-bottom: 1rem; padding: 0.75rem;">
-      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gather Victim Identity Information</summary>
+    
+    <!-- Gather Victim Identity Information -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gather Victim Identity Information - T1589</summary>
       <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
-        Utilizes publicly available information such as social media, websites, and databases to collect actionable intelligence.
+        This phase focuses on collecting identity-related details such as credentials, email addresses, and employee names to build a profile of the target.
       </p>
+      
+      <!-- Credentials -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Credentials - T1589.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for harvesting user credentials and login details.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Credentials harvesting
+console.log("Gathering Credentials snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Email Addresses -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Email Addresses - T1589.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for extracting email addresses from public sources and breaches.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Email Addresses extraction
+console.log("Gathering Email Addresses snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Employee Names -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Employee Names - T1589.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Description for identifying and gathering employee names from social media and company directories.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code block for Employee Names retrieval
+console.log("Gathering Employee Names snippet");
+          </pre>
+        </details>
+      </details>
     </details>
+    
+    <!-- Gather Victim Network Information Section -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gather Victim Network Information - T1590</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Collect network-related details such as IP addresses, Active Directory mappings, and network device inventories.
+      </p>
+      
+      <!-- Domain Properties -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Domain Properties - T1590.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Identify and enumerate domain-related properties of the victim network.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for Domain Properties discovery
+console.log("Domain Properties snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- DNS -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">DNS - T1590.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Map and enumerate the victim’s DNS records and Active Directory mappings.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for DNS mapping
+console.log("DNS mapping snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Network Trust Dependencies -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Network Trust Dependencies - T1590.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Enumerate trust relationships and dependencies within the victim network.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for Network Trust Dependencies
+console.log("Network Trust Dependencies snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Network Topology -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Network Topology - T1590.004</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Visualize and analyze the layout of the victim's network devices and connections.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for Network Topology mapping
+console.log("Network Topology snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- IP Addresses -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">IP Addresses - T1590.005</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Enumerate IP addresses assigned to the victim network.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for IP Addresses enumeration
+console.log("IP Addresses snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Network Security Appliances -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Network Security Appliances - T1590.006</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Identify and enumerate firewalls, IDS/IPS, and other security appliances protecting the victim network.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for Network Security Appliances discovery
+console.log("Network Security Appliances snippet");
+          </pre>
+        </details>
+      </details>
+    </details>
+    
+    <!-- Gather Victim Org Information -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Gather Victim Org Information - T1591</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Collecting organization details such as name, location, size, and type.
+      </p>
+      
+      <!-- Determine Physical Locations -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Determine Physical Locations - T1591.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Retrieve the official name and known aliases of the organization.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for retrieving organization name
+console.log("Gathering Organization Name snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Business Relationships -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Business Relationships - T1591.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Determine the headquarters and branch locations.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for retrieving organization location
+console.log("Gathering Organization Location snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Identify Business Tempo -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Identify Business Tempo - T1591.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Identify the number of employees and revenue scale.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for retrieving organization size
+console.log("Gathering Organization Size snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Identify Roles -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Identify Roles - T1591.004</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Classify the organization (public, private, government, etc.).</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for retrieving organization type
+console.log("Gathering Organization Type snippet");
+          </pre>
+        </details>
+      </details>
+    </details>
+    
+    <!-- Phishing for Information Section -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Phishing for Information - T1598</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Techniques targeting users to extract sensitive data via deceptive communications.
+      </p>
+      
+      <!-- Spear Phishing -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Service - T1598.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Targeted phishing to specific individuals within the organization.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for spear phishing technique
+console.log("Spear Phishing snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Whaling -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Attachment - T1598.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Phishing targeting high-level executives.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for whaling technique
+console.log("Whaling snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Clone Phishing -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Link - T1598.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Duplicate legitimate emails with malicious modifications.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for clone phishing technique
+console.log("Clone Phishing snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Vishing -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Spearphishing Voice - T1598.004</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Voice phishing to trick users into divulging information.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for vishing technique
+console.log("Vishing snippet");
+          </pre>
+        </details>
+      </details>
+    </details>
+    
+    <!-- Search Closed Sources Section -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Closed Sources - T1597</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Accessing non-public databases and internal document repositories.
+      </p>
+      
+      <!-- Threat Intel Vendors -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Threat Intel Vendors - T1597.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Query internal or subscription-based databases.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for querying a private database
+console.log("Private Database query snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Purchase Technical Data -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Purchase Technical Data - T1597.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Search through company archives and secured documents.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for accessing internal repositories
+console.log("Internal Repositories query snippet");
+          </pre>
+        </details>
+      </details>
+    </details>
+    
+    <!-- Search Open Technical Databases Section -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Open Technical Databases - T1596</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Query open-source technical databases for publicly available network and vulnerability data.
+      </p>
+      
+      <!-- DNS/Passive DNS -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">DNS/Passive DNS - T1596.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Search the Shodan database for exposed devices and services.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for querying Shodan
+console.log("Shodan query snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- WHOIS -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">WHOIS - T1596.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Utilize Censys for detailed internet-wide scanning information.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for querying Censys
+console.log("Censys query snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Digital Certificates -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Digital Cetificates - T1596.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Leverage ZoomEye to find network devices and vulnerabilities.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for querying ZoomEye
+console.log("ZoomEye query snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- CDNs -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">CDNs - T1596.004</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Access BinaryEdge data for insights into exposed infrastructure.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for querying BinaryEdge
+console.log("BinaryEdge query snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Scan Databases -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Scan Databases - T1596.005</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Gather threat intelligence from RiskIQ's open data sources.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for querying RiskIQ
+console.log("RiskIQ query snippet");
+          </pre>
+        </details>
+      </details>
+    </details>
+    
+    <!-- Search Open Websites/Domains Section -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Open Websites/Domains - T1593</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Look up public website data, domain history, and subdomain information.
+      </p>
+      
+      <!-- WHOIS Lookup -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Social Media - T1593.001</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Perform WHOIS lookups for registration details.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for WHOIS lookup
+console.log("WHOIS lookup snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Domain History -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Engines - T1593.002</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">Retrieve historical data and changes for a domain.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for domain history lookup
+console.log("Domain History snippet");
+          </pre>
+        </details>
+      </details>
+      
+      <!-- Subdomain Enumeration -->
+      <details style="background: var(--deep-space); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 0.5rem 0; padding: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Code Repositories - T1593.003</summary>
+        <p style="color: var(--stellar-gray); margin-top: 0.5rem;">List and analyze subdomains for the target.</p>
+        <details style="margin-top: 0.5rem;">
+          <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+          <pre>
+// Code snippet for subdomain enumeration
+console.log("Subdomain Enumeration snippet");
+          </pre>
+        </details>
+      </details>
+    </details>
+    
+    <!-- Search Victim-Owned Websites Section -->
+    <details style="background: var(--event-horizon); border: 1px solid var(--quantum-teal); border-radius: 0.5rem; margin: 1rem 0; padding: 0.75rem;">
+      <summary style="cursor: pointer; font-weight: bold; color: var(--quantum-teal);">Search Victim-Owned Websites - T1594</summary>
+      <p style="color: var(--stellar-gray); margin-top: 0.5rem;">
+        Direct search of websites owned and managed by the victim organization.
+      </p>
+      <details style="margin-top: 0.5rem;">
+        <summary style="cursor: pointer; font-weight: bold;">Show Code</summary>
+        <pre>
+// Code snippet for searching victim-owned websites
+console.log("Victim-Owned Websites search snippet");
+        </pre>
+      </details>
+    </details>
+    
   </section>
   
   <!-- Bottom Button Container -->
