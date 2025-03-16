@@ -56,6 +56,7 @@
       pointer-events: none;
       will-change: transform;
     }
+    /* Navbar styling – identical to index.html */
     nav {
       position: fixed;
       top: 0;
@@ -98,13 +99,13 @@
       box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal);
     }
     @keyframes pulse {
-      0% { transform: scale(0.8); opacity: 0.7; box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal); }
-      50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal), 0 0 2.5rem var(--quantum-teal); }
-      100% { transform: scale(0.8); opacity: 0.7; box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal); }
+      0% { transform: scale(0.8); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.8); opacity: 0.7; }
     }
     @keyframes glow {
-      0% { text-shadow: 0 0 0.3125rem rgba(100, 255, 218, 0.5), 0 0 0.625rem rgba(100, 255, 218, 0.5); }
-      100% { text-shadow: 0 0 1.25rem rgba(100, 255, 218, 0.8), 0 0 1.875rem rgba(100, 255, 218, 0.8); }
+      0% { text-shadow: 0 0 0.3125rem rgba(100, 255, 218, 0.5); }
+      100% { text-shadow: 0 0 1.25rem rgba(100, 255, 218, 0.8); }
     }
     .logo::after {
       content: '';
@@ -204,7 +205,7 @@
       cursor: pointer;
       padding: 0.5rem;
     }
-    /* Media queries for nav on mobile */
+    /* Mobile navbar adjustments */
     @media (max-width: 768px) {
       .nav-group {
         position: fixed;
@@ -227,8 +228,7 @@
         border: none;
       }
     }
-    
-    /* Centered text box placed in document flow with reduced width */
+    /* Centered text box */
     .centered-box {
       margin: calc(var(--nav-height) + 2rem) auto 2rem auto;
       padding: 1rem 2rem;
@@ -242,7 +242,6 @@
       text-align: center;
       box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
     }
-    /* Mobile adjustments for the centered box */
     @media (max-width: 768px) {
       .centered-box {
         padding: 0.75rem 1rem;
@@ -253,8 +252,10 @@
   </style>
 </head>
 <body>
-  <!-- Network canvas (math background) -->
+  <!-- Background network canvas -->
   <canvas class="network-canvas" id="networkCanvas"></canvas>
+  
+  <!-- Navbar (copied from index.html) -->
   <nav>
     <a href="/index.html" class="logo">CyberBS<span class="pulsing-dot"></span></a>
     <button class="hamburger" aria-label="Menu">☰</button>
@@ -296,7 +297,7 @@
     <div class="progress-bar"></div>
   </nav>
   
-  <!-- Centered text box with static bold text split into two paragraphs -->
+  <!-- Main content: Centered text box -->
   <div class="centered-box">
     <p>
       CyberBS is a comprehensive cybersecurity platform offering a wide range of tools, scans, and resources to help users navigate the complex world of digital security. The website features an engaging interface with interactive sections, including detailed insights on the latest cyber threats, vulnerabilities, and security statistics. Users can explore various cybersecurity frameworks such as MITRE ATT&CK and MITRE D3FEND, along with practical utilities like file virus scans, URL checks, and file data viewers. The dynamic carousel presents trusted external tools like VirusTotal and ANY.RUN to enhance threat analysis. Additionally, the platform offers real-time security metrics, highlighting data breach losses and cybercrime impacts, while delivering an informative, user-friendly experience. Designed with modern aesthetics and responsive features, CyberBS empowers individuals to improve their cyber defenses through accessible, actionable intelligence and innovative remediation solutions. Explore CyberBS today to discover robust security strategies, gain expert insights, and fortify your digital presence effectively.
@@ -305,7 +306,7 @@
   </div>
   
   <script>
-    // Canvas animation for network nodes (math background)
+    // Set up the background network canvas
     const canvas = document.getElementById('networkCanvas');
     const ctx = canvas.getContext('2d');
     function setCanvasSize() {
@@ -378,7 +379,7 @@
   </script>
   
   <script>
-    // Typewriter animation for the email address only
+    // Email typewriter animation
     document.addEventListener("DOMContentLoaded", function() {
       const emailSpan = document.querySelector('.email-animate');
       const fullText = emailSpan.getAttribute('data-text');
@@ -388,7 +389,7 @@
         if (index < fullText.length) {
           emailSpan.textContent += fullText.charAt(index);
           index++;
-          setTimeout(typeEmail, 100); // Adjust delay as desired
+          setTimeout(typeEmail, 100);
         }
       }
       typeEmail();
