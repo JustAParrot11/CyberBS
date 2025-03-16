@@ -4,7 +4,16 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; font-src 'self' cdnjs.cloudflare.com; frame-src 'none'; object-src 'none'; base-uri 'none';">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com;
+                 style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com;
+                 img-src 'self' data:;
+                 connect-src 'self';
+                 font-src 'self' cdnjs.cloudflare.com;
+                 frame-src 'none';
+                 object-src 'none';
+                 base-uri 'none';">
   <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), usb=()">
@@ -16,12 +25,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CyberBS | Cybersecurity Redefined - About</title>
 
-  <link rel="stylesheet" 
+  <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer">
-    
+
   <style>
     :root {
       --deep-space: #0a192f;
@@ -29,9 +38,8 @@
       --nebula-blue: #1a3657;
       --stellar-gray: #8892b0;
       --event-horizon: #020c1b;
-      /* Assumed nav bar height */
-      --nav-height: 70px;
     }
+
     html {
       font-size: clamp(12px, 1.2vw, 16px);
     }
@@ -47,6 +55,7 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
     /* Network canvas (math background) */
     .network-canvas {
       position: fixed;
@@ -56,18 +65,20 @@
       pointer-events: none;
       will-change: transform;
     }
-    /* Navbar styling – identical to index.html */
+
+    /* NAVBAR (identical to index.html) */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: relative;
       padding: clamp(0.75rem, 5%, 1.5rem);
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: rgba(10, 25, 47, 0.97);
       backdrop-filter: blur(12px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       z-index: 2;
     }
     .progress-bar {
@@ -96,16 +107,42 @@
       border-radius: 50%;
       margin-left: 0.625rem;
       animation: pulse 1.5s infinite;
-      box-shadow: 0 0 0.3125rem var(--quantum-teal), 0 0 0.625rem var(--quantum-teal), 0 0 1.25rem var(--quantum-teal);
+      box-shadow: 0 0 0.3125rem var(--quantum-teal),
+                  0 0 0.625rem var(--quantum-teal),
+                  0 0 1.25rem var(--quantum-teal);
     }
     @keyframes pulse {
-      0% { transform: scale(0.8); opacity: 0.7; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(0.8); opacity: 0.7; }
+      0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+        box-shadow: 0 0 0.3125rem var(--quantum-teal),
+                    0 0 0.625rem var(--quantum-teal),
+                    0 0 1.25rem var(--quantum-teal);
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+        box-shadow: 0 0 0.625rem var(--quantum-teal),
+                    0 0 1.25rem var(--quantum-teal),
+                    0 0 2.5rem var(--quantum-teal);
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+        box-shadow: 0 0 0.3125rem var(--quantum-teal),
+                    0 0 0.625rem var(--quantum-teal),
+                    0 0 1.25rem var(--quantum-teal);
+      }
     }
     @keyframes glow {
-      0% { text-shadow: 0 0 0.3125rem rgba(100, 255, 218, 0.5); }
-      100% { text-shadow: 0 0 1.25rem rgba(100, 255, 218, 0.8); }
+      0% {
+        text-shadow: 0 0 0.3125rem rgba(100, 255, 218, 0.5),
+                     0 0 0.625rem rgba(100, 255, 218, 0.5);
+      }
+      100% {
+        text-shadow: 0 0 1.25rem rgba(100, 255, 218, 0.8),
+                     0 0 1.875rem rgba(100, 255, 218, 0.8);
+      }
     }
     .logo::after {
       content: '';
@@ -142,7 +179,9 @@
       height: 1rem;
       bottom: -0.5rem;
     }
-    .nav-item:hover { color: var(--quantum-teal); }
+    .nav-item:hover {
+      color: var(--quantum-teal);
+    }
     .nav-item a {
       display: block;
       color: inherit;
@@ -205,7 +244,25 @@
       cursor: pointer;
       padding: 0.5rem;
     }
-    /* Mobile navbar adjustments */
+
+    /* Extra media queries for consistent navbar spacing on large screens */
+    @media (max-width: 1920px) {
+      nav {
+        padding: 1rem 4%;
+      }
+    }
+    @media (max-width: 1440px) {
+      nav {
+        padding: 0.75rem 3%;
+      }
+    }
+    @media (max-width: 1024px) {
+      nav {
+        padding: 0.75rem 3%;
+      }
+    }
+
+    /* Mobile menu for navbar */
     @media (max-width: 768px) {
       .nav-group {
         position: fixed;
@@ -219,8 +276,12 @@
         border: 1px solid rgba(100, 255, 218, 0.1);
         transition: transform 0.3s ease;
       }
-      .nav-group.active { transform: translateX(0); }
-      .hamburger { display: block; }
+      .nav-group.active {
+        transform: translateX(0);
+      }
+      .hamburger {
+        display: block;
+      }
       .dropdown {
         position: static;
         margin-top: 0.5rem;
@@ -228,9 +289,10 @@
         border: none;
       }
     }
-    /* Centered text box */
+
+    /* A basic container for the page content */
     .centered-box {
-      margin: calc(var(--nav-height) + 2rem) auto 2rem auto;
+      margin: 6rem auto 2rem auto; /* space from the top so the navbar doesn't overlap */
       padding: 1rem 2rem;
       background: rgba(10, 25, 47, 0.95);
       border: 1px solid var(--quantum-teal);
@@ -244,18 +306,19 @@
     }
     @media (max-width: 768px) {
       .centered-box {
+        margin: 5rem auto 1rem auto;
         padding: 0.75rem 1rem;
         font-size: clamp(0.7rem, 2.5vw, 0.9rem);
-        margin: calc(var(--nav-height) + 1rem) auto 1rem auto;
       }
     }
+
   </style>
 </head>
 <body>
-  <!-- Background network canvas -->
+  <!-- Network canvas -->
   <canvas class="network-canvas" id="networkCanvas"></canvas>
-  
-  <!-- Navbar (copied from index.html) -->
+
+  <!-- NAVBAR (identical structure from index.html) -->
   <nav>
     <a href="/index.html" class="logo">CyberBS<span class="pulsing-dot"></span></a>
     <button class="hamburger" aria-label="Menu">☰</button>
@@ -296,17 +359,21 @@
     </div>
     <div class="progress-bar"></div>
   </nav>
-  
-  <!-- Main content: Centered text box -->
+
+  <!-- ABOUT PAGE CONTENT -->
   <div class="centered-box">
     <p>
       CyberBS is a comprehensive cybersecurity platform offering a wide range of tools, scans, and resources to help users navigate the complex world of digital security. The website features an engaging interface with interactive sections, including detailed insights on the latest cyber threats, vulnerabilities, and security statistics. Users can explore various cybersecurity frameworks such as MITRE ATT&CK and MITRE D3FEND, along with practical utilities like file virus scans, URL checks, and file data viewers. The dynamic carousel presents trusted external tools like VirusTotal and ANY.RUN to enhance threat analysis. Additionally, the platform offers real-time security metrics, highlighting data breach losses and cybercrime impacts, while delivering an informative, user-friendly experience. Designed with modern aesthetics and responsive features, CyberBS empowers individuals to improve their cyber defenses through accessible, actionable intelligence and innovative remediation solutions. Explore CyberBS today to discover robust security strategies, gain expert insights, and fortify your digital presence effectively.
     </p>
-    <p style="font-weight: bold !important;">Contact us at: <span class="email-animate" style="color: var(--quantum-teal) !important;" data-text="cyberbsinfo@gmail.com"></span></p>
+    <p style="font-weight: bold !important;">
+      Contact us at:
+      <span class="email-animate" style="color: var(--quantum-teal) !important;" data-text="cyberbsinfo@gmail.com"></span>
+    </p>
   </div>
-  
+
+  <!-- SCRIPTS -->
   <script>
-    // Set up the background network canvas
+    // Network canvas animation
     const canvas = document.getElementById('networkCanvas');
     const ctx = canvas.getContext('2d');
     function setCanvasSize() {
@@ -314,6 +381,7 @@
       canvas.height = window.innerHeight;
     }
     setCanvasSize();
+
     class Node {
       constructor() { this.reset(); }
       reset() {
@@ -336,8 +404,12 @@
         ctx.fill();
       }
     }
+
     class Connection {
-      constructor(node1, node2) { this.node1 = node1; this.node2 = node2; }
+      constructor(node1, node2) {
+        this.node1 = node1;
+        this.node2 = node2;
+      }
       draw() {
         const dx = this.node1.x - this.node2.x;
         const dy = this.node1.y - this.node2.y;
@@ -354,6 +426,7 @@
         }
       }
     }
+
     let nodes = [];
     function createNodes() {
       const baseNodeCount = 150;
@@ -362,24 +435,52 @@
       nodes = Array.from({ length: nodeCount }, () => new Node());
     }
     createNodes();
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      nodes.forEach(node => { node.update(); node.draw(); });
+      nodes.forEach(node => {
+        node.update();
+        node.draw();
+      });
       nodes.forEach((node1, i) => {
-        nodes.slice(i + 1).forEach(node2 => { new Connection(node1, node2).draw(); });
+        nodes.slice(i + 1).forEach(node2 => {
+          new Connection(node1, node2).draw();
+        });
       });
       requestAnimationFrame(animate);
     }
+
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => { setCanvasSize(); createNodes(); }, 200);
+      resizeTimeout = setTimeout(() => {
+        setCanvasSize();
+        createNodes();
+      }, 200);
     });
     animate();
   </script>
-  
+
   <script>
-    // Email typewriter animation
+    // Mobile nav hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navGroup = document.querySelector('.nav-group');
+    hamburger.addEventListener('click', () => {
+      navGroup.classList.toggle('active');
+    });
+
+    // Progress bar on scroll
+    const progressBar = document.querySelector('.progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollProgress = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = `${scrollProgress}%`;
+    });
+  </script>
+
+  <script>
+    // Simple typewriter effect for the email
     document.addEventListener("DOMContentLoaded", function() {
       const emailSpan = document.querySelector('.email-animate');
       const fullText = emailSpan.getAttribute('data-text');
