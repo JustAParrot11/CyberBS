@@ -150,6 +150,12 @@
       bottom: -0.5rem;
     }
     .nav-item:hover { color: var(--quantum-teal); }
+    /* New rule to ensure links inside nav items inherit correct styles */
+    .nav-item a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
     .nav-item .dropdown-item {
       position: relative;
       display: block;
@@ -582,10 +588,6 @@
     .saturate { filter: saturate(200%); }
     .grayscale { filter: grayscale(100%); }
     .flicker { animation: flicker 1s infinite; }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
     .bounce { animation: bounce 1s infinite; }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
@@ -790,7 +792,7 @@
       <div class="nav-item">
         File Check
         <div class="dropdown">
-          <a href="pages/File-Virus-Scan.html" class="dropdown-item" style="text-decoration: none; display: block;" rel="noopener noreferrer">File Virus Check</a>
+          <a href="pages/File-Virus-Scan.html" class="dropdown-item" rel="noopener noreferrer">File Virus Check</a>
           <div class="dropdown-item">File Data Viewer</div>
           <div class="dropdown-item">File EXIF Extractor</div>
         </div>
@@ -803,7 +805,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a href="pages/About.html" class="dropdown-item" rel="noopener noreferrer">About</a>
+        <a href="pages/About.html" rel="noopener noreferrer">About</a>
       </div>
     </div>
     <div class="progress-bar"></div>
