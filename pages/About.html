@@ -40,7 +40,9 @@
       --event-horizon: #020c1b;
     }
 
+    /* Always show vertical scrollbar */
     html {
+      overflow-y: scroll; /* <<--- KEY CHANGE */
       font-size: clamp(12px, 1.2vw, 16px);
     }
     * {
@@ -311,7 +313,6 @@
         font-size: clamp(0.7rem, 2.5vw, 0.9rem);
       }
     }
-
   </style>
 </head>
 <body>
